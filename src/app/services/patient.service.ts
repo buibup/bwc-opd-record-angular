@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable, Subject, pipe, throwError } from 'rxjs';
-import { map, takeUntil, tap, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+
+import { Http, Response } from '@angular/http';
 import { PatientInfoVM } from '../models/patient-info-vm.model';
+// import { Observable } from 'rxjs/Observable';
+
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +18,15 @@ export class PatientService {
 
   constructor(private http: Http) { }
 
-  getPatientInfoByPapmiNo(papmiNo: string) {
-    papmiNo = '81-17-000301';
-    return this.http.get(this.url + 'GetPatientInfoByPapmiNo/' + papmiNo + '/DoctorPanel/inactive/');
-    pipe(
-      map((data: Response) => {
-      return data.json();
-    }), catchError( error => {
-      return throwError(error);
-    }));
+  public getPatientInfoByPapmiNo(papmiNo: string): PatientInfoVM {
+    // return this.http
+    //   .get(API_URL + '/GetPatientInfoByPapmiNo' + papmiNo + '/DoctorPanel/inactive/')
+    //   .map(response => {
+    //     const pts = response.json();
+    //     return pts.map((pt) => new PatientInfoVM(pt));
+    //   })
+    //   .catch(this.handleError);
+
+    return new PatientInfoVM();
   }
 }

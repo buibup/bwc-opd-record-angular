@@ -20,16 +20,16 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
-const APP_CONTAINERS = [
-  DefaultLayoutComponent
-];
+import { PatientService } from './services/patient.service';
+
+const APP_CONTAINERS = [DefaultLayoutComponent];
 
 import {
   AppAsideModule,
   AppBreadcrumbModule,
   AppHeaderModule,
   AppFooterModule,
-  AppSidebarModule,
+  AppSidebarModule
 } from '@coreui/angular';
 
 // Import routing module
@@ -39,6 +39,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { importExpr } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   imports: [
@@ -62,10 +63,13 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     LoginComponent,
     RegisterComponent
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy,
-  }],
-  bootstrap: [ AppComponent ]
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    PatientService
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
