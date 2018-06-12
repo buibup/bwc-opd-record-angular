@@ -1,9 +1,11 @@
+import { PatientInfoVM } from './../models/patient-info-vm.model';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
-import { Http, Response } from '@angular/http';
-import { PatientInfoVM } from '../models/patient-info-vm.model';
-// import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+
+import {Observable, of} from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 const API_URL = environment.apiUrl;
 
@@ -16,17 +18,16 @@ export class PatientService {
 
   url = 'http://localhost:63402/api/OpdRecord/';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  public getPatientInfoByPapmiNo(papmiNo: string): PatientInfoVM {
-    // return this.http
-    //   .get(API_URL + '/GetPatientInfoByPapmiNo' + papmiNo + '/DoctorPanel/inactive/')
-    //   .map(response => {
-    //     const pts = response.json();
-    //     return pts.map((pt) => new PatientInfoVM(pt));
-    //   })
-    //   .catch(this.handleError);
+  public getPatientInfoByPapmiNo(papmiNo: string): Observable<PatientInfoVM> {
+    return this.http
+      .get<any>(API_URL + '/GetPatientInfoByPapmiNo' + papmiNo + '/DoctorPanel/inactive/')
+      .pipe(map(result => {
+        this.patientInfoVM = result.PatientInfoVM;
 
-    return new PatientInfoVM();
+        return result;
+      })
+    );
   }
 }
