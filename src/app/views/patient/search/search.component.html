@@ -1,0 +1,7 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">Patient Search</a>
+  <form class="form-inline" role="form" action="#">
+    <input class="form-control mr-sm-2" name="HN" #HN type="search" placeholder="Patient HN" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="getPatientInfoByPapmiNo(HN.value)">Search</button>
+  </form>
+</nav>

@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 
 import {Observable, of} from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { EpisodeTree } from '../models/episode-tree.model';
+import { EpisodeService } from './episode.service';
 
 const API_URL = environment.apiUrl;
 
@@ -14,20 +16,18 @@ const API_URL = environment.apiUrl;
 })
 export class PatientService {
 
-  patientInfoVM = PatientInfoVM;
+  baseUrl: string;
+  patientInfoVM: PatientInfoVM;
+  episodeTree: EpisodeTree[];
 
-  url = 'http://localhost:63402/api/OpdRecord/';
+  constructor(public episodeService: EpisodeService){
 
-  constructor(private http: HttpClient) { }
+  }
 
-  public getPatientInfoByPapmiNo(papmiNo: string): Observable<PatientInfoVM> {
-    return this.http
-      .get<any>(API_URL + '/GetPatientInfoByPapmiNo' + papmiNo + '/DoctorPanel/inactive/')
-      .pipe(map(result => {
-        this.patientInfoVM = result.PatientInfoVM;
-
-        return result;
-      })
-    );
+  public setPatientInfoVM(patientInfoVM: PatientInfoVM) {
+    this.patientInfoVM = patientInfoVM;
+    this.episodeTree = patientInfoVM.EpisodeTree;
+    this.episodeService.setEpisodeTree(patientInfoVM.EpisodeTree);
+    console.log(this.patientInfoVM);
   }
 }

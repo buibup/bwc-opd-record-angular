@@ -7,5 +7,6 @@ export const environment = {
   production: false,
 
   // URL of development API
-  apiUrl: 'http://localhost:63402/api/OpdRecord'
+  // apiUrl: 'http://localhost/BwcOpdRecord/'
+  apiUrl: 'http://localhost:58795/'
 };
