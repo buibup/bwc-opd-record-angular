@@ -20,7 +20,7 @@ export class PatientService {
   patientInfoVM: PatientInfoVM;
   episodeTree: EpisodeTree[];
 
-  constructor(public episodeService: EpisodeService){
+  constructor(public episodeService: EpisodeService) {
 
   }
 

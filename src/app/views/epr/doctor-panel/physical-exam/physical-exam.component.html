@@ -1,1 +1,4 @@
-<app-anti-aging></app-anti-aging>
+<div *ngIf="this.doctorService.physicalExams?.AntiAgings.length > 0">
+  <app-anti-aging></app-anti-aging>
+</div>
+

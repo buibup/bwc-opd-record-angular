@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DoctorService } from '../../../../services/doctor.service';
 
 @Component({
   selector: 'app-physical-exam',
@@ -7,14 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PhysicalExamComponent implements OnInit {
 
-    // PhysicalExams AntiAgings
-    @Input() openedPhysicalExamAntiAging = false;
-    @Input() openedPEAntiAgingsHistory = false;
-    @Input() openedPEAntiAgingsGenetic = false;
-    @Input() openedPEAntiAgingsFamilyHistory = false;
-    @Input() openedPEAntiAgingsPhysicalExamination = false;
-
-  constructor() { }
+  constructor(public doctorService: DoctorService) { }
 
   ngOnInit() {
   }
