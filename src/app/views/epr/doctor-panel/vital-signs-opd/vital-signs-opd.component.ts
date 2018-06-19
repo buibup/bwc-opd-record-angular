@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorService } from '../../../../services/doctor.service';
 
 @Component({
   selector: 'app-vital-signs-opd',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VitalSignsOpdComponent implements OnInit {
 
-  constructor() { }
+  isCollapsed: boolean = true;
+
+  constructor(public doctorService: DoctorService) { }
 
   ngOnInit() {
+  }
+
+  collapsed(event: any): void {
+    // console.log(event);
+  }
+
+  expanded(event: any): void {
+    // console.log(event);
   }
 
 }

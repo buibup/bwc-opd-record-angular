@@ -26,6 +26,9 @@ import { DoctorService } from './services/doctor.service';
 import { PatientService } from './services/patient.service';
 import { EpisodeService } from './services/episode.service';
 
+// Collapse Component
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
 const APP_CONTAINERS = [DefaultLayoutComponent];
 
 import {
@@ -70,6 +73,7 @@ import { TreatmentComponent } from './views/epr/doctor-panel/treatment/treatment
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    CollapseModule.forRoot(),
     ChartsModule,
   ],
   declarations: [
