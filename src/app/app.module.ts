@@ -49,6 +49,7 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { SearchComponent } from './views/patient/search/search.component';
 import { InfoComponent } from './views/patient/info/info.component';
 import { VisitComponent } from './views/patient/visit/visit.component';
+import { DoctorPanelComponent } from './views/epr/doctor-panel/doctor-panel.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { VisitComponent } from './views/patient/visit/visit.component';
     RegisterComponent,
     SearchComponent,
     InfoComponent,
-    VisitComponent
+    VisitComponent,
+    DoctorPanelComponent
   ],
   providers: [
     {
