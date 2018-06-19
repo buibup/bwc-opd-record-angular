@@ -1,4 +1,3 @@
-import { EpisodeService } from './services/episode.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -22,7 +21,10 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
+// Import service
+import { DoctorService } from './services/doctor.service';
 import { PatientService } from './services/patient.service';
+import { EpisodeService } from './services/episode.service';
 
 const APP_CONTAINERS = [DefaultLayoutComponent];
 
@@ -43,6 +45,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { SearchComponent } from './views/patient/search/search.component';
+
 
 @NgModule({
   imports: [
@@ -74,7 +77,8 @@ import { SearchComponent } from './views/patient/search/search.component';
       useClass: HashLocationStrategy
     },
     PatientService,
-    EpisodeService
+    EpisodeService,
+    DoctorService
   ],
   bootstrap: [AppComponent]
 })
