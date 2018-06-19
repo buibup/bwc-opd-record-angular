@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="col-sm-12 col-lg-12" *ngIf="this.patientService.patientInfoVM">
+    <div class="brand-card">
+      <div class="brand-card-header bg-behance">
+        <i class="fa fa-user-o">
+          HN : {{this.patientService.patientInfoVM.PatientInfo.PAPMI_No}}
+          Name : {{this.patientService.patientInfoVM.PatientInfo.FullName}}
+        </i>
+      </div>
+      <div class="brand-card-body">
+        <div>
+          <div class="text-value">Sex</div>
+          <div class="text-uppercase text-muted small">
+              {{this.patientService.patientInfoVM.PatientInfo.CTSEX_Desc}}
+          </div>
+        </div>
+        <div>
+          <div class="text-value">DOB</div>
+          <div class="text-uppercase text-muted small">
+              {{this.patientService.patientInfoVM.PatientInfo.PAPMI_DOB | date: 'dd/MM/yyyy'}}
+          </div>
+        </div>
+        <div>
+            <div class="text-value">Age</div>
+            <div class="text-uppercase text-muted small">
+              {{this.patientService.patientInfoVM.PatientInfo.Age}}
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+
+</div>
+<!-- /.container-fluid -->

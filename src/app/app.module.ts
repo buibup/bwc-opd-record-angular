@@ -45,6 +45,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { SearchComponent } from './views/patient/search/search.component';
+import { InfoComponent } from './views/patient/info/info.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { SearchComponent } from './views/patient/search/search.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    SearchComponent
+    SearchComponent,
+    InfoComponent
   ],
   providers: [
     {
