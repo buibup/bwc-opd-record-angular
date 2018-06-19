@@ -25,6 +25,6 @@ export class DoctorService {
     this.diets = doctorPanel.Diets;
     this.exercises = doctorPanel.Exercises;
     this.planAndTreatments = doctorPanel.PlanAndTreatments;
-    // console.log(this.planAndTreatments.length);
+    console.log(this.doctorPanel);
   }
 }

@@ -46,6 +46,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { SearchComponent } from './views/patient/search/search.component';
 import { InfoComponent } from './views/patient/info/info.component';
+import { VisitComponent } from './views/patient/visit/visit.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { InfoComponent } from './views/patient/info/info.component';
     LoginComponent,
     RegisterComponent,
     SearchComponent,
-    InfoComponent
+    InfoComponent,
+    VisitComponent
   ],
   providers: [
     {
