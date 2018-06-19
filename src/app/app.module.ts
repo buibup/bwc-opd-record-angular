@@ -50,6 +50,11 @@ import { SearchComponent } from './views/patient/search/search.component';
 import { InfoComponent } from './views/patient/info/info.component';
 import { VisitComponent } from './views/patient/visit/visit.component';
 import { DoctorPanelComponent } from './views/epr/doctor-panel/doctor-panel.component';
+import { VitalSignsOpdComponent } from './views/epr/doctor-panel/vital-signs-opd/vital-signs-opd.component';
+import { PhysicalExamComponent } from './views/epr/doctor-panel/physical-exam/physical-exam.component';
+import { DietComponent } from './views/epr/doctor-panel/diet/diet.component';
+import { ExerciseComponent } from './views/epr/doctor-panel/exercise/exercise.component';
+import { TreatmentComponent } from './views/epr/doctor-panel/treatment/treatment.component';
 
 
 @NgModule({
@@ -77,7 +82,12 @@ import { DoctorPanelComponent } from './views/epr/doctor-panel/doctor-panel.comp
     SearchComponent,
     InfoComponent,
     VisitComponent,
-    DoctorPanelComponent
+    DoctorPanelComponent,
+    VitalSignsOpdComponent,
+    PhysicalExamComponent,
+    DietComponent,
+    ExerciseComponent,
+    TreatmentComponent
   ],
   providers: [
     {
