@@ -58,6 +58,8 @@ import { PhysicalExamComponent } from './views/epr/doctor-panel/physical-exam/ph
 import { DietComponent } from './views/epr/doctor-panel/diet/diet.component';
 import { ExerciseComponent } from './views/epr/doctor-panel/exercise/exercise.component';
 import { TreatmentComponent } from './views/epr/doctor-panel/treatment/treatment.component';
+import { AntiAgingComponent } from './views/epr/doctor-panel/physical-exam/anti-aging/anti-aging.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 
 @NgModule({
@@ -91,7 +93,9 @@ import { TreatmentComponent } from './views/epr/doctor-panel/treatment/treatment
     PhysicalExamComponent,
     DietComponent,
     ExerciseComponent,
-    TreatmentComponent
+    TreatmentComponent,
+    AntiAgingComponent,
+    PanelComponent
   ],
   providers: [
     {

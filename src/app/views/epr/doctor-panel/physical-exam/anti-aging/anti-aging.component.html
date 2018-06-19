@@ -1,0 +1,256 @@
+<div *ngIf="this.doctorService.physicalExams">
+  <div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
+          Physical Exam Anti Aging
+        </button>
+      </div>
+      <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+        <div *ngFor="let antiAging of this.doctorService.physicalExams.AntiAgings">
+
+          <!--History-->
+          <div class="card-header">
+            <div (click)="isHistory = !isHistory">
+              History
+            </div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isHistory">
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Chief Complaint</div>
+              <div class="col-md-9">{{antiAging.History.ChiefComplaint}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">Other </div>
+              <div class="col-md-8">{{antiAging.History.ChiefComplaintOther}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Present illness</div>
+              <div class="col-md-9">{{antiAging.History.PresentIllness}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Underlying Disease</div>
+              <div class="col-md-9">{{antiAging.History.UnderlyingDisease}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Current Medication</div>
+              <div class="col-md-9">{{antiAging.History.CurrentMedication}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Supplementation</div>
+              <div class="col-md-9">{{antiAging.History.Supplementation}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">History of Investigation</div>
+              <div class="col-md-9">{{antiAging.History.HistoryInvestigation}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">GI</div>
+              <div class="col-md-9">{{antiAging.History.GI}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">Other </div>
+              <div class="col-md-9">{{antiAging.History.GIOther}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Sleep </div>
+              <div class="col-md-9">{{antiAging.History.Sleep}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2"> </div>
+              <div class="col-md-1">{{antiAging.History.SleepHours}}</div>
+              <div class="col-md-2">Hours/Day Other</div>
+              <div class="col-md-6">{{antiAging.History.SleepOther}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Skin </div>
+              <div class="col-md-9">{{antiAging.History.Skin}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2"> Other</div>
+              <div class="col-md-9">{{antiAging.History.SkinOther}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Memory </div>
+              <div class="col-md-9">{{antiAging.History.Memory}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">Other </div>
+              <div class="col-md-9">{{antiAging.History.MemoryOther}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Immune </div>
+              <div class="col-md-9">{{antiAging.History.Immune}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">Other </div>
+              <div class="col-md-9">{{antiAging.History.ImmuneOther}}</div>
+            </div>
+
+            <div class="row">
+              <!--<div class="col-md-1"></div>-->
+              <div class="col-md-3">Sexual Health </div>
+              <div class="col-md-9">{{antiAging.History.Sexual}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">Other </div>
+              <div class="col-md-9">{{antiAging.History.SexualOther}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Exercise </div>
+              <div class="col-md-9">{{antiAging.History.Exercise}}</div>
+            </div>
+          </div>
+          <!--End History-->
+
+          <!--Genetic-->
+          <div class="card-header">
+            <div (click)="isGenetic = !isGenetic">
+              Genetic
+            </div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isGenetic">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-10">{{antiAging.Genetic.Genetic}}</div>
+            </div>
+          </div>
+          <!--End Genetic-->
+
+          <!--Family History-->
+          <div class="card-header">
+            <div (click)="isFamilyHistory = !isFamilyHistory">
+              Family History
+            </div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isFamilyHistory">
+            <div class="row">
+              <div class="col-md-3">Father</div>
+              <div class="col-md-9">{{antiAging.FamilyHistory.Father}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Mother</div>
+              <div class="col-md-9">{{antiAging.FamilyHistory.Mother}}</div>
+            </div>
+          </div>
+          <!--End Family History-->
+
+          <!--Physical Examination-->
+          <div class="card-header">
+            <div (click)="isPhysicalExamination = !isPhysicalExamination">
+              Physical Examination
+            </div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isPhysicalExamination">
+            <div class="row">
+              <div class="col-md-3">General Appearance</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.GeneralAppearance}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.GeneralOther}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">ENT</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.ENT}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Pharynx</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.Pharynx}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Tonsils</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.Tonsils}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Neck node</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.NeckNode}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.NeckNodeOther}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Respiratory</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.Respiratory}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.RespiratoryOther}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Cardiovascular</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.Cardiovascular}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.CardiovascularOther}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Abdomen</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.Abdomen}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.AbdomenOther}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">Physical Exam</div>
+              <div class="col-md-9">{{antiAging.PhysicalExamination.PhysicalExam}}</div>
+            </div>
+          </div>
+          <!--End Physical Examination-->
+
+          <div class="row">
+            <div class="col-md-2">
+              Doctor
+            </div>
+            <div class="col-md-10">
+              {{antiAging.Doctor}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

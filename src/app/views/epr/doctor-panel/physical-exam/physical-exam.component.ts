@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-physical-exam',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./physical-exam.component.scss']
 })
 export class PhysicalExamComponent implements OnInit {
+
+    // PhysicalExams AntiAgings
+    @Input() openedPhysicalExamAntiAging = false;
+    @Input() openedPEAntiAgingsHistory = false;
+    @Input() openedPEAntiAgingsGenetic = false;
+    @Input() openedPEAntiAgingsFamilyHistory = false;
+    @Input() openedPEAntiAgingsPhysicalExamination = false;
 
   constructor() { }
 

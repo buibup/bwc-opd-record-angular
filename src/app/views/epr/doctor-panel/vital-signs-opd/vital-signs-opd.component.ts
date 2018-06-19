@@ -8,12 +8,12 @@ import { DoctorService } from '../../../../services/doctor.service';
 })
 export class VitalSignsOpdComponent implements OnInit {
 
-  isCollapsed: boolean = true;
-
   constructor(public doctorService: DoctorService) { }
 
   ngOnInit() {
   }
+
+  isCollapsed: boolean = true;
 
   collapsed(event: any): void {
     // console.log(event);
