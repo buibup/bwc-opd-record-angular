@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { navItems } from './../../_nav';
+import { navOpdRecordItems } from './../../_nav-opd-record';
 import { PatientService } from '../../services/patient.service';
 import { EpisodeService } from '../../services/episode.service';
 import { DoctorService } from '../../services/doctor.service';
@@ -11,6 +12,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class DefaultLayoutComponent {
   public navItems = navItems;
+  public navOpdRecordItems = navOpdRecordItems;
   public sidebarMinimized = true;
   private changes: MutationObserver;
   public element: HTMLElement = document.body;

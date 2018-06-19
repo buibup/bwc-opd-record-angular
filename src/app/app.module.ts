@@ -44,6 +44,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+
+// Import opd record component
 import { SearchComponent } from './views/patient/search/search.component';
 import { InfoComponent } from './views/patient/info/info.component';
 import { VisitComponent } from './views/patient/visit/visit.component';
