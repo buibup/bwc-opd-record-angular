@@ -1,3 +1,53 @@
-<p>
-  exercise works!
-</p>
+<div *ngIf="this.doctorService.exercises?.length > 0">
+  <div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
+          BWC Exercise
+        </button>
+      </div>
+      <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+          <div *ngFor="let exercise of this.doctorService.exercises">
+    
+            <!-- Exercise -->
+            <div class="row">
+                <div class="col-md-2">Frequency</div>
+                <div class="col-md-10">{{exercise.QFrequency}}</div>
+              </div>
+      
+              <div class="row">
+                <div class="col-md-2">Type of exercise</div>
+                <div class="col-md-10">{{exercise.QTypeExercise}}</div>
+              </div>
+      
+              <div class="row">
+                <div class="col-md-2">List of exercise</div>
+                <div class="col-md-10">{{exercise.QListOfExercise}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">Other   </div>
+                <div class="col-md-10">{{exercise.QListOfExerciseETC}}</div>
+              </div>
+      
+              <div class="row">
+                <div class="col-md-2">Duration</div>
+                <div class="col-md-10">{{exercise.QDuration}}</div>
+              </div>
+      
+              <div class="row">
+                <div class="col-md-2">Athletic Injuries</div>
+                <div class="col-md-10">{{exercise.QAthleticInjuries}}</div>
+              </div>
+      
+              <div class="row">
+                <div class="col-md-2">Specify</div>
+                <div class="col-md-10">{{exercise.QAthleticInjuriesText}}</div>
+              </div>
+              
+            <!-- End Exercise -->
+    
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
