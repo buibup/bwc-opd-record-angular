@@ -1,3 +1,126 @@
-<p>
-  diet works!
-</p>
+<div *ngIf="this.doctorService.diets?.length > 0">
+  <div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
+          Nutrition information
+        </button>
+      </div>
+      <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+        <div *ngFor="let diet of this.doctorService.diets">
+
+          <!-- Dietary Patterns -->
+          <div class="card-header">
+            <div (click)="isDietaryPatterns = !isDietaryPatterns">
+              Dietary pattern from usual consumption
+            </div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isDietaryPatterns">
+            <div class="row" *ngFor="let dietaryPattern of diet.DietaryPatterns">
+              <div class="col-md-2">
+                <strong>{{dietaryPattern.QTime}}</strong>
+              </div>
+              <div class="col-md-5">{{dietaryPattern.QMeal}}</div>
+              <div class="col-md-5">{{dietaryPattern.QMeal}}</div>
+            </div>
+          </div>
+          <!-- End Dietary Patterns -->
+
+          <!-- Behavioral consumption -->
+          <div class="card-header">
+            <div (click)="isBehavioral = !isBehavioral">
+              Behavioral consumption
+            </div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isBehavioral">
+            <div class="row" *ngIf="diet.Behavioral">
+              <div class="col-md-2">
+                <strong>NA</strong>
+              </div>
+              <div class="col-md-10">{{diet.Behavioral.QBehavioralNA}}</div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Behavioral consumption</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Consumption amount/time</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Vegetable</th>
+                    <td></td>
+                    <td>{{diet.Behavioral.QVegetableConsumption}}</td>
+                    <td>{{diet.Behavioral.QVegetableFrequency}}</td>
+                    <td>{{diet.Behavioral.QVegetableNote}}</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">Fruit</th>
+                    <td></td>
+                    <td>{{diet.Behavioral.QFruitConsumption}}</td>
+                    <td>{{diet.Behavioral.QFruitFrequency}}</td>
+                    <td>{{diet.Behavioral.QFruitNote}}</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">Tea</th>
+                    <td>{{diet.Behavioral.QTeaType}}</td>
+                    <td>{{diet.Behavioral.QTeaConsumption}}</td>
+                    <td>{{diet.Behavioral.QTeaFrequency}}</td>
+                    <td>{{diet.Behavioral.QTeaNote}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>
+                      <strong>Other: </strong>{{diet.Behavioral.QTeaTypeOther}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">Coffee</th>
+                    <td>{{diet.Behavioral.QCoffeeType}}</td>
+                    <td>{{diet.Behavioral.QCoffeeConsumption}}</td>
+                    <td>{{diet.Behavioral.QCoffeeFrequency}}</td>
+                    <td>{{diet.Behavioral.QCoffeeNote}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>
+                      <strong>Other: </strong> {{diet.Behavioral.QCoffeeTpyeOther}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">Alcohol</th>
+                    <td>{{diet.Behavioral.QAlcoholType}}</td>
+                    <td>{{diet.Behavioral.QAlcoholConsumption}}</td>
+                    <td>{{diet.Behavioral.QAlcoholFrequency}}</td>
+                    <td>{{diet.Behavioral.QAlcoholNote}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>
+                      <strong>Other: </strong> {{diet.Behavioral.QAlcoholTypeOther}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- End Behavioral consumption -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

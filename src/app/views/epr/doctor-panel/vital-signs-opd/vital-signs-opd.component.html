@@ -6,55 +6,89 @@
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
-          <div *ngFor="let vitalSignsOPD of this.doctorService.vitalSignsOPDs">
-              <div class="row">
-                <div class="col-md-3">Observation Item</div>
-                <div class="col-md-2">{{vitalSignsOPD.ObsDate  | date: 'dd/MM/yyyy'}}</div>
-                <div class="col-md-2">{{vitalSignsOPD.ObsTime}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Weight</div>
-                <div class="col-md-1">Kilogram</div>
-                <div class="col-md-2">{{vitalSignsOPD.Weight}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Height </div>
-                <div class="col-md-1">cm</div>
-                <div class="col-md-2">{{vitalSignsOPD.Height}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Temperature </div>
-                <div class="col-md-1">C</div>
-                <div class="col-md-2">{{vitalSignsOPD.Temperature}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Systolic / Diastolic </div>
-                <div class="col-md-1">mmHg</div>
-                <div class="col-md-2">{{vitalSignsOPD.Systolic}} / {{vitalSignsOPD.Diastolic}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Pulse </div>
-                <div class="col-md-1">bt/min</div>
-                <div class="col-md-2">{{vitalSignsOPD.Pulse}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Respirations </div>
-                <div class="col-md-1">br/min</div>
-                <div class="col-md-2">{{vitalSignsOPD.Respirations}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">BMI</div>
-                <div class="col-md-1">kg/m2</div>
-                <div class="col-md-2">{{vitalSignsOPD.BMI}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Oxygen Saturation</div>
-                <div class="col-md-1">%</div>
-                <div class="col-md-2">{{vitalSignsOPD.OxygenSaturation}}</div>
-              </div>
-        
-              <br />
+        <div *ngFor="let vitalSignsOPD of this.doctorService.vitalSignsOPDs">
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Observation Item</strong>
             </div>
+            <div class="col-md-2">{{vitalSignsOPD.ObsDate | date: 'dd/MM/yyyy'}}</div>
+            <div class="col-md-2">{{vitalSignsOPD.ObsTime}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Weight</strong>
+            </div>
+            <div class="col-md-2">
+              <mark>Kilogram</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.Weight}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Height</strong>
+            </div>
+            <div class="col-md-2">
+              <mark>cm</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.Height}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Temperature</strong>
+            </div>
+            <div class="col-md-2">
+              <mark>C</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.Temperature}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Systolic / Diastolic</strong>
+            </div>
+            <div class="col-md-2">
+              <mark>mmHg</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.Systolic}} / {{vitalSignsOPD.Diastolic}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Pulse</strong>
+            </div>
+            <div class="col-md-2">
+              <mark>bt/min</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.Pulse}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Respirations</strong>
+            </div>
+            <div class="col-md-1">
+              <mark>br/min</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.Respirations}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>BMI</strong>
+            </div>
+            <div class="col-md-1">
+              <mark>kg/m2</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.BMI}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Oxygen Saturation</strong>
+            </div>
+            <div class="col-md-1">
+              <mark>%</mark>
+            </div>
+            <div class="col-md-2">{{vitalSignsOPD.OxygenSaturation}}</div>
+          </div>
+
+          <br />
+        </div>
       </div>
     </div>
   </div>

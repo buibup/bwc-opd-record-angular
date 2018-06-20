@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorService } from '../../../../services/doctor.service';
 
 @Component({
   selector: 'app-diet',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DietComponent implements OnInit {
 
-  constructor() { }
+  constructor(public doctorService: DoctorService) { }
 
   ngOnInit() {
+  }
+
+  isCollapsed: boolean = true;
+  isDietaryPatterns: boolean = true;
+  isBehavioral: boolean = true;
+
+  collapsed(event: any): void {
+    // console.log(event);
+  }
+
+  expanded(event: any): void {
+    // console.log(event);
   }
 
 }
