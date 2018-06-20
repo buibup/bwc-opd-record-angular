@@ -7,47 +7,61 @@
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
-          <div *ngFor="let exercise of this.doctorService.exercises">
-    
-            <!-- Exercise -->
-            <div class="row">
-                <div class="col-md-2">Frequency</div>
-                <div class="col-md-10">{{exercise.QFrequency}}</div>
-              </div>
-      
-              <div class="row">
-                <div class="col-md-2">Type of exercise</div>
-                <div class="col-md-10">{{exercise.QTypeExercise}}</div>
-              </div>
-      
-              <div class="row">
-                <div class="col-md-2">List of exercise</div>
-                <div class="col-md-10">{{exercise.QListOfExercise}}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-2">Other   </div>
-                <div class="col-md-10">{{exercise.QListOfExerciseETC}}</div>
-              </div>
-      
-              <div class="row">
-                <div class="col-md-2">Duration</div>
-                <div class="col-md-10">{{exercise.QDuration}}</div>
-              </div>
-      
-              <div class="row">
-                <div class="col-md-2">Athletic Injuries</div>
-                <div class="col-md-10">{{exercise.QAthleticInjuries}}</div>
-              </div>
-      
-              <div class="row">
-                <div class="col-md-2">Specify</div>
-                <div class="col-md-10">{{exercise.QAthleticInjuriesText}}</div>
-              </div>
-              
-            <!-- End Exercise -->
-    
+        <div *ngFor="let exercise of this.doctorService.exercises">
+
+          <!-- Exercise -->
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Frequency</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QFrequency}}</div>
           </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Type of exercise</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QTypeExercise}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <strong>List of exercise</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QListOfExercise}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Other</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QListOfExerciseETC}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Duration</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QDuration}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Athletic Injuries</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QAthleticInjuries}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <strong>Specify</strong>
+            </div>
+            <div class="col-md-10">{{exercise.QAthleticInjuriesText}}</div>
+          </div>
+
+          <!-- End Exercise -->
+
         </div>
+      </div>
     </div>
   </div>
 </div>
