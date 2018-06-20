@@ -25,9 +25,15 @@ export class PatientService {
   }
 
   public setPatientInfoVM(patientInfoVM: PatientInfoVM) {
+    this.clearPatient();
     this.patientInfoVM = patientInfoVM;
     this.episodeTree = patientInfoVM.EpisodeTree;
     this.episodeService.setEpisodeTree(patientInfoVM.EpisodeTree);
-    console.log(this.patientInfoVM);
+    // console.log(this.patientInfoVM);
+  }
+
+  public clearPatient() {
+    this.patientInfoVM = null;
+    this.episodeTree = [];
   }
 }

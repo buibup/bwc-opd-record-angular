@@ -1,3 +1,4 @@
+import { EpisodeTree } from './../../../models/episode-tree.model';
 import { Component, OnInit } from '@angular/core';
 import { EpisodeService } from '../../../services/episode.service';
 import { ApiService } from '../../../services/api.service';
@@ -20,6 +21,10 @@ export class VisitComponent implements OnInit {
   public getDoctorPanelByEpiRowId(epiRowId: number) {
     this.apiService.getDoctorPanelByEpiRowId(epiRowId)
       .subscribe(dp => this.doctor.setDoctorPanel(dp));
+  }
+
+  public setEpisodeSelected(episode: EpisodeTree) {
+    this.episodeService.setEpisodeSeleted(episode);
   }
 
 }

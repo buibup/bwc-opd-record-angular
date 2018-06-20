@@ -60,6 +60,7 @@ import { ExerciseComponent } from './views/epr/doctor-panel/exercise/exercise.co
 import { TreatmentComponent } from './views/epr/doctor-panel/treatment/treatment.component';
 import { AntiAgingComponent } from './views/epr/doctor-panel/physical-exam/anti-aging/anti-aging.component';
 import { PanelComponent } from './components/panel/panel.component';
+import { EpisodeSelectedComponent } from './views/patient/visit/episode-selected/episode-selected.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { PanelComponent } from './components/panel/panel.component';
     ExerciseComponent,
     TreatmentComponent,
     AntiAgingComponent,
-    PanelComponent
+    PanelComponent,
+    EpisodeSelectedComponent
   ],
   providers: [
     {
