@@ -1,3 +1,130 @@
-<p>
-  treatment works!
-</p>
+<div *ngIf="this.doctorService.planAndTreatments?.length > 0">
+  <div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
+          BWC Treatment
+        </button>
+      </div>
+      <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+        <div *ngFor="let item of this.doctorService.planAndTreatments">
+
+          <!-- Plan and Treatment -->
+          <div class="card-header">
+            <div (click)="isPlanAndTreatment = !isPlanAndTreatment">Plan and Treatment <strong>{{item.QUESDate | date: 'dd/MM/yyyy'}} {{item.QUESTime}}</strong></div>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isPlanAndTreatment">
+
+            <!-- Plan -->
+            <div class="card-header">
+              <div (click)="isPlan = !isPlan">Plan</div>
+            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isPlan">
+              <div *ngIf="item.Plan">
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Advice diet control</strong>
+                  </div>
+                  <div class="col-md-10">{{item.Plan.QDiet}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-10">{{item.Plan.QDietText}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Advice exercise</strong>
+                  </div>
+                  <div class="col-md-10">{{item.Plan.QExercise}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-10">{{item.Plan.QExerciseText}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Sleep</strong>
+                  </div>
+                  <div class="col-md-10">{{item.Plan.QSleepText}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Other</strong>
+                  </div>
+                  <div class="col-md-10">{{item.Plan.QPlanText}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- End Plan -->
+
+            <!-- Treatment -->
+            <div class="card-header">
+              <div (click)="isTreatment = !isTreatment">Treatment</div>
+            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isTreatment">
+              <div *ngIf="item.Treatment">
+                <div *ngIf="item.Treatment.Medications.length > 0">
+                  <div class="row">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Medication</th>
+                          <th scope="col">Dose</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let medication of item.Treatment.Medications">
+                          <td>{{medication.ARCIM_Desc}}</td>
+                          <td>{{medication.QDose}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Supplement</strong>
+                  </div>
+                  <div class="col-md-1">{{item.Treatment.QSupplementW}}</div>
+                  <div class="col-md-1">week</div>
+                  <div class="col-md-1">{{item.Treatment.QSupplementM}}</div>
+                  <div class="col-md-1">month</div>
+                  <div class="col-md-6">
+                    <strong>Note:</strong> {{item.Treatment.QSupplement}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Follow up by phone</strong>
+                  </div>
+                  <div class="col-md-1">{{item.Treatment.QFollowUpPhoneW}}</div>
+                  <div class="col-md-1">week</div>
+                  <div class="col-md-1">{{item.Treatment.QFollowUpPhoneM}}</div>
+                  <div class="col-md-1">month</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <strong>Follow up</strong>
+                  </div>
+                  <div class="col-md-1">{{item.Treatment.QFollowUpW}}</div>
+                  <div class="col-md-1">week</div>
+                  <div class="col-md-1">{{item.Treatment.QFollowUpMonth}}</div>
+                  <div class="col-md-1">month</div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Treatment -->
+
+          </div>
+          <!-- End Plan and Treatment -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

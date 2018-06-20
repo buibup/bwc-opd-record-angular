@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorService } from '../../../../services/doctor.service';
 
 @Component({
   selector: 'app-treatment',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreatmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public doctorService: DoctorService) { }
 
   ngOnInit() {
+  }
+
+  isCollapsed: boolean = true;
+  isPlanAndTreatment: boolean = true; 
+  isPlan: boolean = true; 
+  isTreatment: boolean = true;
+
+  collapsed(event: any): void {
+    // console.log(event);
+  }
+
+  expanded(event: any): void {
+    // console.log(event);
   }
 
 }
