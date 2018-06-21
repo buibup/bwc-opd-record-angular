@@ -13,11 +13,11 @@ export class AntiAgingComponent implements OnInit {
   ngOnInit() {
   }
 
-  isCollapsed: boolean = true;
-  isHistory: boolean = true;
-  isGenetic: boolean = true;
-  isFamilyHistory: boolean = true;
-  isPhysicalExamination: boolean = true;
+  isCollapsed: boolean = false;
+  isHistory: boolean = false;
+  isGenetic: boolean = false;
+  isFamilyHistory: boolean = false;
+  isPhysicalExamination: boolean = false;
 
   collapsed(event: any): void {
     // console.log(event);
