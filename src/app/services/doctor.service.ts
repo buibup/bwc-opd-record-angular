@@ -19,12 +19,24 @@ export class DoctorService {
   planAndTreatments: PlanAndTreatment[];
 
   public setDoctorPanel(doctorPanel: DoctorPanel) {
-    this.doctorPanel = doctorPanel;
-    this.vitalSignsOPDs = doctorPanel.VitalSignsOPDs;
-    this.physicalExams = doctorPanel.PhysicalExams;
-    this.diets = doctorPanel.Diets;
-    this.exercises = doctorPanel.Exercises;
-    this.planAndTreatments = doctorPanel.PlanAndTreatments;
-    // console.log(this.doctorPanel.PhysicalExams.AntiAgings.length);
+    this.clear();
+    if (doctorPanel != null) {
+      this.doctorPanel = doctorPanel;
+      this.vitalSignsOPDs = doctorPanel.VitalSignsOPDs;
+      this.physicalExams = doctorPanel.PhysicalExams;
+      this.diets = doctorPanel.Diets;
+      this.exercises = doctorPanel.Exercises;
+      this.planAndTreatments = doctorPanel.PlanAndTreatments;
+      // console.log(this.doctorPanel.PhysicalExams.AntiAgings.length);
+    }
+  }
+
+  clear() {
+    this.doctorPanel = null;
+    this.vitalSignsOPDs = [];
+    this.physicalExams = null;
+    this.diets = [];
+    this.exercises = [];
+    this.planAndTreatments = [];
   }
 }

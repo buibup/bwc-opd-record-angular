@@ -8,6 +8,6 @@ export const environment = {
 
   // URL of development API
   // apiUrl: 'http://localhost/BwcOpdRecord/'
-  // apiUrl: 'http://localhost:63810/'
-  apiUrl: 'http://localhost:58795/'
+  apiUrl: 'http://localhost:63810/'
+  // apiUrl: 'http://localhost:58795/'
 };

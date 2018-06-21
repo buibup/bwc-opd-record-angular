@@ -19,12 +19,21 @@ export class VisitComponent implements OnInit {
   }
 
   public getDoctorPanelByEpiRowId(epiRowId: number) {
+    this.clear();
     this.apiService.getDoctorPanelByEpiRowId(epiRowId)
       .subscribe(dp => this.doctor.setDoctorPanel(dp));
   }
 
   public setEpisodeSelected(episode: EpisodeTree) {
-    this.episodeService.setEpisodeSeleted(episode);
+    if (episode != null) {
+      this.episodeService.setEpisodeSeleted(episode);
+    }
+  }
+
+  clear() {
+    this.doctor.setDoctorPanel(null);
+    this.episodeService.setEpisodeSeleted(null);
+    this.doctor.clear();
   }
 
 }
