@@ -12,6 +12,6 @@ export class EpisodeService {
 
   public setEpisodeSeleted(episodeSelected: EpisodeTree) {
     this.episodeSelected = episodeSelected;
-    console.log(this.episodeSelected);
+    // console.log(this.episodeSelected);
   }
 }

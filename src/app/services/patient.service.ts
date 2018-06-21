@@ -33,7 +33,7 @@ export class PatientService {
       this.patientInfoVM = patientInfoVM;
       this.episodeTree = patientInfoVM.EpisodeTree;
       this.episodeService.setEpisodeTree(patientInfoVM.EpisodeTree);
-       console.log(this.doctorService.vitalSignsOPDs);
+      //  console.log(this.doctorService.vitalSignsOPDs);
     }
   }
 

@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
 
   public getPatientInfoByPapmiNo(papmiNo: string) {
     this.patientService.setPatientInfoVM(null);
-    console.log(this.patientService.patientInfoVM);
     this.apiService.getPatientInfoByPapmiNo(papmiNo)
       .subscribe(ptVm => this.patientService.setPatientInfoVM(ptVm));
   }
