@@ -47,6 +47,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+import { MatTabsModule } from '@angular/material';
 
 // Import opd record component
 import { SearchComponent } from './views/patient/search/search.component';
@@ -78,6 +79,7 @@ import { EpisodeSelectedComponent } from './views/patient/visit/episode-selected
     TabsModule.forRoot(),
     CollapseModule.forRoot(),
     ChartsModule,
+    MatTabsModule
   ],
   declarations: [
     AppComponent,
