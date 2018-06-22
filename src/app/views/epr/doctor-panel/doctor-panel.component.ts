@@ -8,7 +8,8 @@ import { EpisodeService } from '../../../services/episode.service';
 })
 export class DoctorPanelComponent implements OnInit {
 
-  constructor(public episodeService: EpisodeService) { }
+  constructor(public episodeService: EpisodeService) {
+  }
 
   ngOnInit() {
   }

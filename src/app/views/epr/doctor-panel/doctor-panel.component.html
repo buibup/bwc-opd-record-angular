@@ -1,32 +1,51 @@
-<app-vital-signs-opd></app-vital-signs-opd>
-<app-physical-exam></app-physical-exam>
-<app-diet></app-diet>
-<app-exercise></app-exercise>
-<app-treatment></app-treatment>
-<!-- 
-<div *ngIf="this.episodeService.episodeSelected">
+<div class="container-fluid">
+    <div class="animated fadeIn col-sm-12 col-lg-12" *ngIf="this.episodeService.episodeSelected">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Nav tabs -->
+            <tabset>
+              <tab>
+                <ng-template tabHeading>
+                  <i class="icon-calculator"></i> {{this.episodeService.episodeSelected.PAADM_ADMNo}} </ng-template>
+                  <div class="col-md-12">
+                      <app-vital-signs-opd></app-vital-signs-opd>
+                  </div>
+                  <div class="col-md-12">
+                      <app-physical-exam></app-physical-exam>
+                  </div>
+                  <div class="col-md-12">
+                      <app-diet></app-diet>
+                  </div>
+                  <div class="col-md-12">
+                      <app-exercise></app-exercise>
+                  </div>
+                  <div class="col-md-12">
+                      <app-treatment></app-treatment>
+                  </div>
+              </tab>
+            </tabset>
+          </div>
+          <!--/.col-->
+        </div>
+      </div>
+</div>
 
-    <div (click)="$event.preventDefault()">
-        <button type="button" class="btn btn-primary btn-sm" (click)="addNewTab()">
-          Add new tab
-        </button>
-        <button type="button" class="btn btn-primary btn-sm" (click)="tabs = []"  *ngIf="tabs.length">
-          Remove all tabs
-        </button>
-      <hr/>
-      <tabset>
-        <tab heading="test">test</tab>
-        <tab *ngFor="let tabz of tabs"
-             [heading]="tabz.title"
-             [active]="tabz.active"
-             (select)="tabz.active = true"
-             (deselect)="tabz.active = false"
-             [disabled]="tabz.disabled"
-             [removable]="tabz.removable"
-             (removed)="removeTabHandler(tabz)"
-             [customClass]="tabz.customClass">
-          {{tabz?.content}}
-        </tab>
-      </tabset>
-    </div>
+<!-- <div *ngIf="this.episodeService.episodeSelected">
+
+  <div (click)="$event.preventDefault()">
+    <button type="button" class="btn btn-primary btn-sm" (click)="addNewTab()">
+      Add new tab
+    </button>
+    <button type="button" class="btn btn-primary btn-sm" (click)="tabs = []" *ngIf="tabs.length">
+      Remove all tabs
+    </button>
+    <hr/>
+    <tabset>
+      <tab heading="test">test</tab>
+      <tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (select)="tabz.active = true" (deselect)="tabz.active = false"
+        [disabled]="tabz.disabled" [removable]="tabz.removable" (removed)="removeTabHandler(tabz)" [customClass]="tabz.customClass">
+        {{tabz?.content}}
+      </tab>
+    </tabset>
+  </div>
 </div> -->
