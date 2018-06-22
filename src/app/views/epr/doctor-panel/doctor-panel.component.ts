@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy  } from '@angular/core';
 import { EpisodeService } from '../../../services/episode.service';
+import { EpisodeTree } from '../../../models/episode-tree.model';
 
 @Component({
   selector: 'app-epr-doctor-panel',

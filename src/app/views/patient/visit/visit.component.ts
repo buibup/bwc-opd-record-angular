@@ -30,6 +30,10 @@ export class VisitComponent implements OnInit {
     }
   }
 
+  public addEpisode(episode: EpisodeTree) {
+    this.episodeService.addEpisode(episode);
+  }
+
   clear() {
     this.doctor.setDoctorPanel(null);
     this.episodeService.setEpisodeSeleted(null);

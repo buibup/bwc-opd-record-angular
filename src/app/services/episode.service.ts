@@ -5,7 +5,7 @@ import { EpisodeTree } from '../models/episode-tree.model';
 export class EpisodeService {
   @Input() episodeTree: EpisodeTree[];
   episodeSelected: EpisodeTree;
-  episodeList: EpisodeTree[];
+  episodeList: EpisodeTree[] = [];
 
   public setEpisodeTree(episodeTree: EpisodeTree[]) {
     this.episodeTree = episodeTree;
@@ -13,11 +13,13 @@ export class EpisodeService {
 
   public setEpisodeSeleted(episodeSelected: EpisodeTree) {
     this.episodeSelected = episodeSelected;
-    console.log(this.episodeSelected);
+    // console.log(this.episodeSelected);
   }
 
   public addEpisode(episode: EpisodeTree) {
     this.episodeList.push(episode);
+    console.log(episode);
+    console.log(this.episodeList);
   }
 
   public removeEpisode(episode: EpisodeTree) {
@@ -25,5 +27,7 @@ export class EpisodeService {
     if (index > -1) {
       this.episodeList.splice(index, 1);
     }
+    console.log(episode);
+    console.log(this.episodeList);
   }
 }
