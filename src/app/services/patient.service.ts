@@ -39,9 +39,7 @@ export class PatientService {
 
   public clear() {
     this.patientInfoVM = null;
-    this.episodeTree = [];
-    this.episodeService.setEpisodeTree([]);
-    this.episodeService.setEpisodeSeleted(null);
+    this.episodeService.clear();
     this.doctorService.clear();
   }
 }

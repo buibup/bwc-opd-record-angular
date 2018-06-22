@@ -1,5 +1,5 @@
-import { Injectable, Inject, Input } from '@angular/core';
-import { EpisodeTree } from '../models/episode-tree.model';
+import { Injectable, Inject, Input } from "@angular/core";
+import { EpisodeTree } from "../models/episode-tree.model";
 
 @Injectable()
 export class EpisodeService {
@@ -29,5 +29,11 @@ export class EpisodeService {
     }
     console.log(episode);
     console.log(this.episodeList);
+  }
+
+  clear() {
+    this.episodeSelected = null;
+    this.episodeList = [];
+    this.episodeTree = null;
   }
 }
