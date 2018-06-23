@@ -1,3 +1,5 @@
+import { DoctorPanel } from './../../../../models/doctor-panel.model';
+import { EpisodeService } from './../../../../services/episode.service';
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../../../../services/doctor.service';
 
@@ -8,7 +10,8 @@ import { DoctorService } from '../../../../services/doctor.service';
 })
 export class VitalSignsOpdComponent implements OnInit {
 
-  constructor(public doctorService: DoctorService) { }
+  constructor(public doctorService: DoctorService,
+    public episodeService: EpisodeService) { }
 
   ngOnInit() {
   }

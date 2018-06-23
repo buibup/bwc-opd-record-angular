@@ -18,7 +18,20 @@ export class DoctorService {
   exercises: Exercise[];
   planAndTreatments: PlanAndTreatment[];
 
-  public setDoctorPanel(doctorPanel: DoctorPanel) {
+  // public setDoctorPanel(doctorPanel: DoctorPanel) {
+  //   this.clear();
+  //   if (doctorPanel != null) {
+  //     this.doctorPanel = doctorPanel;
+  //     this.vitalSignsOPDs = doctorPanel.VitalSignsOPDs;
+  //     this.physicalExams = doctorPanel.PhysicalExams;
+  //     this.diets = doctorPanel.Diets;
+  //     this.exercises = doctorPanel.Exercises;
+  //     this.planAndTreatments = doctorPanel.PlanAndTreatments;
+  //     // console.log(this.doctorPanel.PhysicalExams.AntiAgings.length);
+  //   }
+  // }
+
+  public setDoctorPanelDisplay(doctorPanel: DoctorPanel) {
     this.clear();
     if (doctorPanel != null) {
       this.doctorPanel = doctorPanel;

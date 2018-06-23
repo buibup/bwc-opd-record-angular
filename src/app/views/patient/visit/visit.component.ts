@@ -36,7 +36,7 @@ export class VisitComponent implements OnInit {
   }
 
   clear() {
-    this.doctor.setDoctorPanel(null);
+    // this.doctor.setDoctorPanel(null);
     this.episodeService.setEpisodeSeleted(null);
     this.doctor.clear();
   }

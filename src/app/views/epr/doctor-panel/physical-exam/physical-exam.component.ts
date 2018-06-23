@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DoctorService } from '../../../../services/doctor.service';
+import { EpisodeService } from '../../../../services/episode.service';
 
 @Component({
   selector: 'app-physical-exam',
@@ -8,7 +9,8 @@ import { DoctorService } from '../../../../services/doctor.service';
 })
 export class PhysicalExamComponent implements OnInit {
 
-  constructor(public doctorService: DoctorService) { }
+  constructor(public doctorService: DoctorService,
+    episodeService: EpisodeService) { }
 
   ngOnInit() {
   }

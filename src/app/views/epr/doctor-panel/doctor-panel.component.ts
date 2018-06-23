@@ -1,6 +1,8 @@
+import { DoctorService } from './../../../services/doctor.service';
 import { Component, OnInit, ChangeDetectionStrategy  } from '@angular/core';
 import { EpisodeService } from '../../../services/episode.service';
 import { EpisodeTree } from '../../../models/episode-tree.model';
+import { DoctorPanel } from '../../../models/doctor-panel.model';
 
 @Component({
   selector: 'app-epr-doctor-panel',
@@ -12,10 +14,19 @@ export class DoctorPanelComponent implements OnInit {
   episodeTabList = [];
   tabs: any[] = [];
 
-  constructor(public episodeService: EpisodeService) {
+  constructor(public episodeService: EpisodeService,
+    public doctorService: DoctorService) {
   }
 
   ngOnInit() {
+  }
+
+  setDoctorPanelDisplay(epiRowId: number) {
+    const item = this.episodeService.episodeList.filter(e => e.PAADM_RowID === epiRowId)[0];
+    const doctorPanel = item.DoctorPanel;
+    if (doctorPanel) {
+      this.doctorService.setDoctorPanelDisplay(doctorPanel);
+    }
   }
 
   addNewTab(): void {

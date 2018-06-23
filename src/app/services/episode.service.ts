@@ -1,3 +1,4 @@
+import { DoctorService } from './doctor.service';
 import { DoctorPanel } from './../models/doctor-panel.model';
 import { Injectable, Inject, Input } from '@angular/core';
 import { EpisodeTree } from '../models/episode-tree.model';
@@ -7,6 +8,10 @@ export class EpisodeService {
   @Input() episodeTree: EpisodeTree[];
   episodeSelected: EpisodeTree;
   episodeList: EpisodeTree[] = [];
+
+  constructor(public doctorService: DoctorService) {
+
+  }
 
   public setEpisodeTree(episodeTree: EpisodeTree[]) {
     this.episodeTree = episodeTree;
@@ -21,9 +26,8 @@ export class EpisodeService {
     const items = this.episodeList.filter(e => e.PAADM_RowID === epiRowId);
     const item = items[0];
     if (item) {
-      console.log(item);
       item.DoctorPanel = doctorPanel;
-      console.log(this.episodeList);
+      this.doctorService.setDoctorPanelDisplay(doctorPanel);
     }
   }
 
