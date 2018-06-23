@@ -17,9 +17,12 @@ export class EpisodeService {
   }
 
   public addEpisode(episode: EpisodeTree) {
-    this.episodeList.push(episode);
-    console.log(episode);
-    console.log(this.episodeList);
+    const item = this.episodeList.filter(e => e.PAADM_RowID === episode.PAADM_RowID);
+    if (item.length === 0) {
+      this.episodeList.push(episode);
+      console.log(episode);
+      console.log(this.episodeList);
+    }
   }
 
   public removeEpisode(episode: EpisodeTree) {
