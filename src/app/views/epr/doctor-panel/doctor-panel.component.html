@@ -1,13 +1,13 @@
 <div class="container-fluid">
-    <div class="animated fadeIn col-sm-12 col-lg-12" *ngIf="this.episodeService.episodeSelected">
-        <div class="row">
-          <div class="col-md-12"> 
+    <div class="animated fadeIn col-sm-12 col-lg-12" *ngIf="this.episodeService.episodeList?.length > 0">
+        <div class="row" >
+          <div class="col-md-12">
             <!-- Nav tabs -->
             <tabset>
-              <tab>
+              <tab *ngFor="let epi of this.episodeService.episodeList">
                 <ng-template tabHeading>
-                  <i class="icon-note"></i> 
-                  {{this.episodeService.episodeSelected.PAADM_ADMNo}}&nbsp;&nbsp; 
+                  <i class="icon-note"></i>
+                  {{epi.PAADM_ADMNo}}&nbsp;&nbsp;
                   <i class="fa fa-thumb-tack"></i>&nbsp;&nbsp;
                   <i class="fa fa-times"></i>
                 </ng-template>

@@ -1,5 +1,6 @@
-import { Injectable, Inject, Input } from "@angular/core";
-import { EpisodeTree } from "../models/episode-tree.model";
+import { DoctorPanel } from './../models/doctor-panel.model';
+import { Injectable, Inject, Input } from '@angular/core';
+import { EpisodeTree } from '../models/episode-tree.model';
 
 @Injectable()
 export class EpisodeService {
@@ -14,6 +15,16 @@ export class EpisodeService {
   public setEpisodeSeleted(episodeSelected: EpisodeTree) {
     this.episodeSelected = episodeSelected;
     // console.log(this.episodeSelected);
+  }
+
+  public addDoctorPanelToEpisodeTree(epiRowId: number, doctorPanel: DoctorPanel) {
+    const items = this.episodeList.filter(e => e.PAADM_RowID === epiRowId);
+    const item = items[0];
+    if (item) {
+      console.log(item);
+      item.DoctorPanel = doctorPanel;
+      console.log(this.episodeList);
+    }
   }
 
   public addEpisode(episode: EpisodeTree) {
