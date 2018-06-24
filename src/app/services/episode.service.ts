@@ -19,12 +19,10 @@ export class EpisodeService {
 
   public setEpisodeSeleted(episodeSelected: EpisodeTree) {
     this.episodeSelected = episodeSelected;
-    // console.log(this.episodeSelected);
   }
 
   public addDoctorPanelToEpisodeTree(epiRowId: number, doctorPanel: DoctorPanel) {
-    const items = this.episodeList.filter(e => e.PAADM_RowID === epiRowId);
-    const item = items[0];
+    const item = this.episodeList.filter(e => e.PAADM_RowID === epiRowId)[0];
     if (item) {
       item.DoctorPanel = doctorPanel;
       this.doctorService.setDoctorPanelDisplay(doctorPanel);
@@ -32,12 +30,32 @@ export class EpisodeService {
   }
 
   public addEpisode(episode: EpisodeTree) {
-    const item = this.episodeList.filter(e => e.PAADM_RowID === episode.PAADM_RowID);
-    if (item.length === 0) {
+    const item = this.episodeList.filter(e => e.PAADM_RowID === episode.PAADM_RowID)[0];
+    if (item == null) {
+      // add new episode
       this.episodeList.push(episode);
-      console.log(episode);
-      console.log(this.episodeList);
+
+      // set episode active
+      this.setEpisodeActive(episode.PAADM_RowID);
+    } else {
+      // set episode active
+      this.setEpisodeActive(episode.PAADM_RowID);
     }
+  }
+
+  public setEpisodeActive(epiRowId: number) {
+    const item = this.episodeList.filter(e => e.PAADM_RowID === epiRowId)[0];
+    if (item) {
+      // clear other epi to inactive
+      this.clearEpisodeListInactive();
+
+      // set epi active
+      item.active = true;
+    }
+  }
+
+  public clearEpisodeListInactive() {
+    this.episodeList.forEach(e => e.active = false);
   }
 
   public removeEpisode(episode: EpisodeTree) {
@@ -45,8 +63,6 @@ export class EpisodeService {
     if (index > -1) {
       this.episodeList.splice(index, 1);
     }
-    console.log(episode);
-    console.log(this.episodeList);
   }
 
   clear() {

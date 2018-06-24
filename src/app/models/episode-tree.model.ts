@@ -14,4 +14,5 @@ export interface EpisodeTree {
   PAADM_Remark?: any;
   DoctorPanel: DoctorPanel;
   VisitType: string;
+  active?: any;
 }

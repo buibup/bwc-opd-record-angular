@@ -4,9 +4,9 @@
       <div class="col-md-12">
         <!-- Nav tabs -->
         <tabset>
-          <tab *ngFor="let epi of this.episodeService.episodeList">
+          <tab *ngFor="let epi of this.episodeService.episodeList" [active]="epi.active">
             <ng-template tabHeading>
-              <div (click)="setDoctorPanelDisplay(epi.PAADM_RowID)">
+              <div (click)="setDoctorPanelDisplay(epi.PAADM_RowID); setEpisodeActive(epi.PAADM_RowID)">
                 <i class="icon-note"></i>
                 {{epi.PAADM_ADMNo}}&nbsp;&nbsp;
                 <i class="fa fa-thumb-tack"></i>&nbsp;&nbsp;
