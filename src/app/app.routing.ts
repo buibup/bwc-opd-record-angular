@@ -9,8 +9,6 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
-import { DoctorPanelComponent } from './views/epr/doctor-panel/doctor-panel.component';
-
 export const routes: Routes = [
   {
     path: '',
@@ -22,13 +20,6 @@ export const routes: Routes = [
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
-    }
-  },
-  {
-    path: 'doctorPanel',
-    component: DoctorPanelComponent,
-    data: {
-      title: 'Doctor Panel'
     }
   },
   {
