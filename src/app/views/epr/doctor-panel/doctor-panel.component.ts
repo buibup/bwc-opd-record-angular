@@ -33,6 +33,10 @@ export class DoctorPanelComponent implements OnInit {
     this.episodeService.setEpisodeActive(epiRowId);
   }
 
+  public addEpisodePin(episode: EpisodeTree) {
+    this.episodeService.addEpisodePin(episode);
+  }
+
   addNewTab(): void {
     const newTabIndex = this.tabs.length + 1;
     this.tabs.push({

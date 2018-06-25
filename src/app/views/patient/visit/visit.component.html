@@ -2,7 +2,7 @@
   <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Episode Tree</div>
   <div class="list-group list-group-accent" *ngFor="let episode of this.episodeService.episodeTree">
     <a [routerLink]='["/"]' (click)='getDoctorPanelByEpiRowId(episode.PAADM_RowID);
-    setEpisodeSelected(episode); addEpisode(episode)'>
+    setEpisodeSelected(episode); addEpisodeTabs(episode)'>
       <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
         <div class="avatar float-right">
           <img class="img-avatar" src="" alt="">

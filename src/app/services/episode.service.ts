@@ -43,6 +43,18 @@ export class EpisodeService {
     }
   }
 
+  public addEpisodeTabs(episode: EpisodeTree) {
+    if (episode.pin) {
+      this.addEpisode(episode);
+    } else {
+      // clear episode unpin
+      this.clearEpisodeListUnpin();
+
+      // add episode for display
+      this.addEpisode(episode);
+    }
+  }
+
   public setEpisodeActive(epiRowId: number) {
     const item = this.episodeList.filter(e => e.PAADM_RowID === epiRowId)[0];
     if (item) {
@@ -54,11 +66,34 @@ export class EpisodeService {
     }
   }
 
+  public addEpisodePin(episode: EpisodeTree) {
+    const addPin = episode;
+    addPin.pin = true;
+    this.addEpisodeTabs(addPin);
+  }
+
   public clearEpisodeListInactive() {
     this.episodeList.forEach(e => e.active = false);
   }
 
+  public clearEpisodeListUnpin() {
+    this.episodeList.forEach(
+      function(item, index, object) {
+        if (!item.pin) {
+          object.splice(index, 1);
+        }
+      }
+    );
+  }
+
   public removeEpisode(episode: EpisodeTree) {
+    const index = this.episodeList.indexOf(episode, 0);
+    if (index > -1) {
+      this.episodeList.splice(index, 1);
+    }
+  }
+
+  public removeEpisodeUnpin(episode: EpisodeTree) {
     const index = this.episodeList.indexOf(episode, 0);
     if (index > -1) {
       this.episodeList.splice(index, 1);

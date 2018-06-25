@@ -15,4 +15,5 @@ export interface EpisodeTree {
   DoctorPanel: DoctorPanel;
   VisitType: string;
   active?: any;
+  pin?: any;
 }

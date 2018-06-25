@@ -34,6 +34,10 @@ export class VisitComponent implements OnInit {
     this.episodeService.addEpisode(episode);
   }
 
+  public addEpisodeTabs(episode: EpisodeTree) {
+    this.episodeService.addEpisodeTabs(episode);
+  }
+
   clear() {
     this.episodeService.setEpisodeSeleted(null);
     this.doctor.clear();
