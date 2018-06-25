@@ -14,8 +14,15 @@ import { DoctorPanelComponent } from './views/epr/doctor-panel/doctor-panel.comp
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'home',
     pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: DefaultLayoutComponent,
+    data: {
+      title: 'Home'
+    }
   },
   {
     path: 'doctorPanel',
