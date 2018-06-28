@@ -10,7 +10,7 @@
                 <i class="icon-note"></i>
                 {{epi.PAADM_ADMNo}}&nbsp;&nbsp;
                 <i class="fa fa-thumb-tack"(click)="addEpisodePin(epi)" [ngClass]="{'pin': epi.pin, 'unpin': !epi.pin}"></i>&nbsp;&nbsp;
-                <i class="fa fa-times"></i>
+                <i class="fa fa-times" (click)="removeEpisodePin(epi)"></i>
               </div>
             </ng-template>
             <div class="col-md-12">

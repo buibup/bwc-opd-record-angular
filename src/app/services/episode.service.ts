@@ -93,9 +93,11 @@ export class EpisodeService {
     }
   }
 
-  public removeEpisodeUnpin(episode: EpisodeTree) {
+  public removeEpisodePin(episode: EpisodeTree) {
     const index = this.episodeList.indexOf(episode, 0);
     if (index > -1) {
+      // remove pin
+      episode.pin = false;
       this.episodeList.splice(index, 1);
     }
   }
