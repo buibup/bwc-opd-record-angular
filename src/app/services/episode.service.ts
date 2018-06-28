@@ -68,7 +68,7 @@ export class EpisodeService {
 
   public addEpisodePin(episode: EpisodeTree) {
     const addPin = episode;
-    addPin.pin = true;
+    addPin.pin = addPin.pin ? false : true;
     this.addEpisodeTabs(addPin);
   }
 
