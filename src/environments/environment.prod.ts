@@ -2,5 +2,5 @@ export const environment = {
   production: true,
 
   // URL of production API
-  apiUrl: ''
+  apiUrl: 'http://localhost/BwcOpdRecordApi/'
 };
