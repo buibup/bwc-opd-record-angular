@@ -3,7 +3,8 @@
     <div class="card">
       <div class="card-header">
         <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
-          <span>&#9733; <b>Nutrition information</b> &#9733;</span>
+          <span>&#9733;
+            <b>Nutrition information</b> &#9733;</span>
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
@@ -12,16 +13,28 @@
           <!-- Dietary Patterns -->
           <div class="card-header">
             <div (click)="isDietaryPatterns = !isDietaryPatterns">
-              Dietary pattern from usual consumption
+              <span>
+                <b class="lead">Dietary pattern from usual consumption</b>
+              </span>
             </div>
           </div>
           <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isDietaryPatterns">
-            <div class="row" *ngFor="let dietaryPattern of diet.DietaryPatterns">
-              <div class="col-md-2">
-                <strong>{{dietaryPattern.QTime}}</strong>
-              </div>
-              <div class="col-md-5">{{dietaryPattern.QMeal}}</div>
-              <div class="col-md-5">{{dietaryPattern.QMeal}}</div>
+            <div class="row" *ngFor="let dietaryPattern of diet.DietaryPatterns; let index = index; let isOdd=odd; let isEven=even">
+              <div *ngIf="isEven;then hilight else nonHilight">here is ignored</div>
+              <ng-template #hilight>
+                <div class="col-md-2">
+                  <strong>{{dietaryPattern.QTime}}</strong>
+                </div>
+                <div class="col-md-5 bg-info">{{dietaryPattern.QMeal}}</div>
+                <div class="col-md-5 bg-info">{{dietaryPattern.QMeal}}</div>
+              </ng-template>
+              <ng-template #nonHilight>
+                <div class="col-md-2">
+                  <strong>{{dietaryPattern.QTime}}</strong>
+                </div>
+                <div class="col-md-5">{{dietaryPattern.QMeal}}</div>
+                <div class="col-md-5">{{dietaryPattern.QMeal}}</div>
+              </ng-template>
             </div>
           </div>
           <!-- End Dietary Patterns -->
@@ -29,7 +42,7 @@
           <!-- Behavioral consumption -->
           <div class="card-header">
             <div (click)="isBehavioral = !isBehavioral">
-              Behavioral consumption
+              <span><b class="lead">Behavioral consumption</b></span>
             </div>
           </div>
           <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isBehavioral">
