@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-header">
         <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
-          Nutrition information
+          <span>&#9733; <b>Nutrition information</b> &#9733;</span>
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">

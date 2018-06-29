@@ -2,7 +2,8 @@
   <div class="animated fadeIn">
     <div class="card">
       <div class="card-header">
-        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">Vital Signs OPD
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
+          <span>&#9733; <b>Vital Signs OPD</b> &#9733;</span>
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
@@ -11,8 +12,7 @@
             <div class="col-md-4">
               <strong>Observation Item</strong>
             </div>
-            <div class="col-md-2">{{vitalSignsOPD.ObsDate | date: 'dd/MM/yyyy'}}</div>
-            <div class="col-md-2">{{vitalSignsOPD.ObsTime}}</div>
+            <div class="col-md-8"><strong>{{vitalSignsOPD.ObsDate | date: 'dd/MM/yyyy'}} {{vitalSignsOPD.ObsTime}}</strong></div>
           </div>
           <div class="row">
             <div class="col-md-2">
@@ -21,7 +21,7 @@
             <div class="col-md-2">
               <mark>Kilogram</mark>
             </div>
-            <div class="col-md-2">{{vitalSignsOPD.Weight}}</div>
+            <div class="col-md-2 bg-info">{{vitalSignsOPD.Weight}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">
@@ -39,7 +39,7 @@
             <div class="col-md-2">
               <mark>C</mark>
             </div>
-            <div class="col-md-2">{{vitalSignsOPD.Temperature}}</div>
+            <div class="col-md-2 bg-info">{{vitalSignsOPD.Temperature}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">
@@ -57,13 +57,13 @@
             <div class="col-md-2">
               <mark>bt/min</mark>
             </div>
-            <div class="col-md-2">{{vitalSignsOPD.Pulse}}</div>
+            <div class="col-md-2 bg-info">{{vitalSignsOPD.Pulse}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">
               <strong>Respirations</strong>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
               <mark>br/min</mark>
             </div>
             <div class="col-md-2">{{vitalSignsOPD.Respirations}}</div>
@@ -72,16 +72,16 @@
             <div class="col-md-2">
               <strong>BMI</strong>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
               <mark>kg/m2</mark>
             </div>
-            <div class="col-md-2">{{vitalSignsOPD.BMI}}</div>
+            <div class="col-md-2 bg-info">{{vitalSignsOPD.BMI}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">
               <strong>Oxygen Saturation</strong>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
               <mark>%</mark>
             </div>
             <div class="col-md-2">{{vitalSignsOPD.OxygenSaturation}}</div>
