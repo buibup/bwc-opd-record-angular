@@ -9,17 +9,17 @@ import { EpisodeService } from '../../../../../services/episode.service';
 })
 export class AntiAgingComponent implements OnInit {
 
+  isCollapsed = false;
+  isHistory = false;
+  isGenetic = false;
+  isFamilyHistory = false;
+  isPhysicalExamination = false;
+
   constructor(public doctorService: DoctorService,
     episodeService: EpisodeService) { }
 
   ngOnInit() {
   }
-
-  isCollapsed: boolean = false;
-  isHistory: boolean = false;
-  isGenetic: boolean = false;
-  isFamilyHistory: boolean = false;
-  isPhysicalExamination: boolean = false;
 
   collapsed(event: any): void {
     // console.log(event);
