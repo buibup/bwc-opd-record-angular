@@ -1,0 +1,30 @@
+.brand-card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.brand-card-header i {
+  font-size: x-large;
+  color: #fff;
+}
+
+.brand-card-body {
+  display: flex;
+  flex-direction: row;
+  padding: 0rem 0;
+  text-align: center;
+}
+
+.text-value {
+  font-size: large;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 90%;
+  font-weight: 400;
+}
