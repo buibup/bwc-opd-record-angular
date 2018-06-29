@@ -9,15 +9,15 @@ import { EpisodeService } from '../../../../services/episode.service';
 })
 export class DietComponent implements OnInit {
 
+  isCollapsed = true;
+  isDietaryPatterns = true;
+  isBehavioral = true;
+
   constructor(public doctorService: DoctorService,
     episodeService: EpisodeService) { }
 
   ngOnInit() {
   }
-
-  isCollapsed: boolean = true;
-  isDietaryPatterns: boolean = true;
-  isBehavioral: boolean = true;
 
   collapsed(event: any): void {
     // console.log(event);

@@ -10,13 +10,13 @@ import { DoctorService } from '../../../../services/doctor.service';
 })
 export class VitalSignsOpdComponent implements OnInit {
 
+  isCollapsed = true;
+
   constructor(public doctorService: DoctorService,
     public episodeService: EpisodeService) { }
 
   ngOnInit() {
   }
-
-  isCollapsed: boolean = true;
 
   collapsed(event: any): void {
     // console.log(event);

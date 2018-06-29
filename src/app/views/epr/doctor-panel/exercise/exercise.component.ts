@@ -9,14 +9,14 @@ import { EpisodeService } from '../../../../services/episode.service';
 })
 export class ExerciseComponent implements OnInit {
 
+  isCollapsed = true;
+  isExercise = true;
+
   constructor(public doctorService: DoctorService,
     episodeService: EpisodeService) { }
 
   ngOnInit() {
   }
-
-  isCollapsed: boolean = true;
-  isExercise: boolean = true;
 
   collapsed(event: any): void {
     // console.log(event);

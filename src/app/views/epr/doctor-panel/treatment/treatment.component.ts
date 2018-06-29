@@ -9,16 +9,16 @@ import { EpisodeService } from '../../../../services/episode.service';
 })
 export class TreatmentComponent implements OnInit {
 
+  isCollapsed = true;
+  isPlanAndTreatment = true;
+  isPlan = true;
+  isTreatment = true;
+
   constructor(public doctorService: DoctorService,
     episodeService: EpisodeService) { }
 
   ngOnInit() {
   }
-
-  isCollapsed: boolean = true;
-  isPlanAndTreatment: boolean = true;
-  isPlan: boolean = true;
-  isTreatment: boolean = true;
 
   collapsed(event: any): void {
     // console.log(event);
