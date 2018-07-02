@@ -178,42 +178,46 @@
           <!--End History-->
 
           <!--Genetic-->
-          <div class="card-header">
-            <div (click)="isGenetic = !isGenetic">
-              <span>
-                <b class="lead">Genetic</b>
-              </span>
+          <div *ngIf="antiAging.Genetic.Genetic !== null">
+            <div class="card-header">
+              <div (click)="isGenetic = !isGenetic">
+                <span>
+                  <b class="lead">Genetic</b>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isGenetic">
-            <div class="row">
-              <div class="col-md-2"></div>
-              <div class="col-md-10 bg-info">{{antiAging.Genetic.Genetic}}</div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isGenetic">
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10 bg-info">{{antiAging.Genetic.Genetic}}</div>
+              </div>
             </div>
           </div>
           <!--End Genetic-->
 
           <!--Family History-->
-          <div class="card-header">
-            <div (click)="isFamilyHistory = !isFamilyHistory">
-              <span>
-                <b class="lead">Family History</b>
-              </span>
-            </div>
-          </div>
-          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isFamilyHistory">
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Father</strong>
+          <div *ngIf="antiAging.FamilyHistory.Father !== null && antiAging.FamilyHistory.Mother !== null">
+            <div class="card-header">
+              <div (click)="isFamilyHistory = !isFamilyHistory">
+                <span>
+                  <b class="lead">Family History</b>
+                </span>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.FamilyHistory.Father}}</div>
             </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isFamilyHistory">
+              <div class="row" *ngIf="antiAging.FamilyHistory.Father !== null">
+                <div class="col-md-3">
+                  <strong>Father</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.FamilyHistory.Father}}</div>
+              </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Mother</strong>
+              <div class="row" *ngIf="antiAging.FamilyHistory.Mother !== null">
+                <div class="col-md-3">
+                  <strong>Mother</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.FamilyHistory.Mother}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.FamilyHistory.Mother}}</div>
             </div>
           </div>
           <!--End Family History-->

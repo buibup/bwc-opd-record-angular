@@ -27,7 +27,7 @@ export class DoctorService {
       this.diets = doctorPanel.Diets;
       this.exercises = doctorPanel.Exercises;
       this.planAndTreatments = doctorPanel.PlanAndTreatments;
-       console.log(this.planAndTreatments.forEach(item => item.Plan.QSleepText));
+       console.log(this.physicalExams);
     }
   }
 
