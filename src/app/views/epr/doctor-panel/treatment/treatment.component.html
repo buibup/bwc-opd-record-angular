@@ -28,39 +28,39 @@
             </div>
             <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isPlan">
               <div *ngIf="item.Plan">
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Plan.QDiet !== null">
+                  <div class="col-md-3">
                     <strong>Advice diet control</strong>
                   </div>
-                  <div class="col-md-10 bg-info">{{item.Plan.QDiet}}</div>
+                  <div class="col-md-9 bg-info">{{item.Plan.QDiet}}</div>
                 </div>
-                <div class="row">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-10">{{item.Plan.QDietText}}</div>
+                <div class="row" *ngIf="item.Plan.QDietText !== null">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">{{item.Plan.QDietText}}</div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Plan.QExercise !== null">
+                  <div class="col-md-3">
                     <strong>Advice exercise</strong>
                   </div>
-                  <div class="col-md-10 bg-info">{{item.Plan.QExercise}}</div>
+                  <div class="col-md-9 bg-info">{{item.Plan.QExercise}}</div>
                 </div>
-                <div class="row">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-10">{{item.Plan.QExerciseText}}</div>
+                <div class="row" *ngIf="item.Plan.QExerciseText !== null">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9 *ngIf=item.Plan.QExerciseText">{{item.Plan.QExerciseText}}</div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Plan.QSleepText !== null">
+                  <div class="col-md-3">
                     <strong>Sleep</strong>
                   </div>
-                  <div class="col-md-10 bg-info">{{item.Plan.QSleepText}}</div>
+                  <div class="col-md-9 bg-info">{{item.Plan.QSleepText}}</div>
                 </div>
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Plan.QPlanText !== null">
+                  <div class="col-md-3">
                     <strong>Other</strong>
                   </div>
-                  <div class="col-md-10">{{item.Plan.QPlanText}}</div>
+                  <div class="col-md-9">{{item.Plan.QPlanText}}</div>
                 </div>
               </div>
             </div>
@@ -93,17 +93,17 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Treatment.QSupplementW !== 0 && item.Treatment.QSupplementM !== 0 && item.Treatment.QSupplement !== null">
+                  <div class="col-md-3">
                     <strong>Supplement</strong>
                   </div>
                   <div class="col-md-1 bg-info">{{item.Treatment.QSupplementW}}</div>
                   <div class="col-md-1">
-                      <strong>week</strong>
+                    <strong>week</strong>
                   </div>
                   <div class="col-md-1 bg-info">{{item.Treatment.QSupplementM}}</div>
-                  <div class="col-md-1">
-                      <strong>month</strong>
+                  <div class="col-md-2">
+                    <strong>month</strong>
                   </div>
                   <div class="col-md-1">
                     <strong>Note:</strong>
@@ -113,22 +113,22 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Treatment.QFollowUpPhoneW !== 0 && item.Treatment.QFollowUpPhoneM !== 0">
+                  <div class="col-md-3">
                     <strong>Follow up by phone</strong>
                   </div>
                   <div class="col-md-1">{{item.Treatment.QFollowUpPhoneW}}</div>
                   <div class="col-md-1">
-                      <strong>week</strong>
+                    <strong>week</strong>
                   </div>
                   <div class="col-md-1">{{item.Treatment.QFollowUpPhoneM}}</div>
-                  <div class="col-md-1">
-                      <strong>month</strong>
+                  <div class="col-md-2">
+                    <strong>month</strong>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-2">
+                <div class="row" *ngIf="item.Treatment.QFollowUpW !== 0 && item.Treatment.QFollowUpMonth !== 0">
+                  <div class="col-md-3">
                     <strong>Follow up</strong>
                   </div>
                   <div class="col-md-1 bg-info">{{item.Treatment.QFollowUpW}}</div>
@@ -136,7 +136,7 @@
                     <strong>week</strong>
                   </div>
                   <div class="col-md-1 bg-info">{{item.Treatment.QFollowUpMonth}}</div>
-                  <div class="col-md-1">
+                  <div class="col-md-2">
                     <strong>month</strong>
                   </div>
                 </div>
