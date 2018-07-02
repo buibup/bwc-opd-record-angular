@@ -42,15 +42,22 @@
           <!-- Behavioral consumption -->
           <div class="card-header">
             <div (click)="isBehavioral = !isBehavioral">
-              <span><b class="lead">Behavioral consumption</b></span>
+              <span>
+                <b class="lead">Behavioral consumption</b>
+              </span>
             </div>
           </div>
           <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isBehavioral">
             <div class="row" *ngIf="diet.Behavioral">
-              <div class="col-md-2">
-                <strong>NA</strong>
+              <div class="col-md-1"></div>
+              <div *ngIf="diet.Behavioral.QBehavioralNA === 1">
+                  <input class="form-check-input"  type="checkbox" id="naChek" checked="true">
+                  <strong>NA</strong>
               </div>
-              <div class="col-md-10">{{diet.Behavioral.QBehavioralNA}}</div>
+              <div *ngIf="diet.Behavioral.QBehavioralNA !== 1">
+                  <input class="form-check-input"  type="checkbox" id="naChek">
+                  <strong>NA</strong>
+              </div>
               <table class="table">
                 <thead>
                   <tr>
