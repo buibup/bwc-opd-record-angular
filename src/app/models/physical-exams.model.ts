@@ -13,7 +13,9 @@ export interface AntiAging {
   History: History;
   IsHistory: boolean;
   Genetic: any;
+  IsGenetic: boolean;
   FamilyHistory: any;
+  IsFamilyHistory: boolean;
   PhysicalExamination: PhysicalExamination;
   IsPhysicalExamination: boolean;
   SpecialNote: any;
