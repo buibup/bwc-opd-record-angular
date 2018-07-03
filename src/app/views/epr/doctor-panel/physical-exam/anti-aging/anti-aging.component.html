@@ -11,174 +11,181 @@
         <div *ngFor="let antiAging of this.doctorService.physicalExams.AntiAgings">
 
           <!--History-->
-          <div class="card-header">
-            <div (click)="isHistory = !isHistory">
-              <span>
-                <b class="lead">History</b>
-              </span>
-            </div>
-          </div>
-          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isHistory">
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Chief Complaint</strong>
+          <div *ngIf="antiAging.IsHistory">
+            <div class="card-header">
+              <div (click)="isHistory = !isHistory">
+                <span>
+                  <b class="lead">History</b>
+                </span>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.ChiefComplaint}}</div>
             </div>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2">
-                <strong>Other</strong>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isHistory">
+              <div class="row" *ngIf="antiAging.History.ChiefComplaint !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Chief Complaint</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.ChiefComplaint}}</div>
               </div>
-              <div class="col-md-8">{{antiAging.History.ChiefComplaintOther}}</div>
-            </div>
+              <div class="row" *ngIf="antiAging.History.ChiefComplaintOther !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <strong>Other</strong>
+                </div>
+                <div class="col-md-8">{{antiAging.History.ChiefComplaintOther}}</div>
+              </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Present illness</strong>
+              <div class="row" *ngIf="antiAging.History.PresentIllness !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Present illness</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.PresentIllness}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.PresentIllness}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Underlying Disease</strong>
+              <div class="row" *ngIf="antiAging.History.UnderlyingDisease !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Underlying Disease</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.UnderlyingDisease}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.UnderlyingDisease}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Current Medication</strong>
+              <div class="row" *ngIf="antiAging.History.CurrentMedication !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Current Medication</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.CurrentMedication}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.CurrentMedication}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Supplementation</strong>
+              <div class="row" *ngIf="antiAging.History.Supplementation !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Supplementation</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Supplementation}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Supplementation}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>History of Investigation</strong>
+              <div class="row" *ngIf="antiAging.History.HistoryInvestigation !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>History of Investigation</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.HistoryInvestigation}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.HistoryInvestigation}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>GI</strong>
+              <div class="row" *ngIf="antiAging.History.GI !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>GI</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.GI}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.GI}}</div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2">
-                <strong>Other</strong>
+              <div class="row" *ngIf="antiAging.History.GIOther !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <strong>Other</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.GIOther}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.GIOther}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Sleep</strong>
+              <div class="row" *ngIf="antiAging.History.Sleep !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Sleep</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Sleep}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Sleep}}</div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2"> </div>
-              <div class="col-md-1 bg-info">{{antiAging.History.SleepHours}}</div>
-              <div class="col-md-3">
-                <strong>Hours/Day Other</strong>
+              <div class="row" *ngIf="antiAging.History.SleepHours !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2"> </div>
+                <div class="col-md-1 bg-info">{{antiAging.History.SleepHours}}</div>
+                <div class="col-md-2">
+                  <strong>Hours/Day</strong>
+                </div>
+                <div class="col-md-1" *ngIf="antiAging.History.SleepOther !== null">
+                  Other
+                </div>
+                <div class="col-md-5 bg-info" *ngIf="antiAging.History.SleepOther !== null">
+                  {{antiAging.History.SleepOther}}
+                </div>
               </div>
-              <div class="col-md-5 bg-info">{{antiAging.History.SleepOther}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Skin</strong>
+              <div class="row" *ngIf="antiAging.History.Skin !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Skin</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Skin}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Skin}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2">
-                <strong>Other</strong>
+              <div class="row" *ngIf="antiAging.History.SkinOther !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <strong>Other</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.SkinOther}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.SkinOther}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Memory</strong>
+              <div class="row" *ngIf="antiAging.History.Memory !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Memory</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Memory}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Memory}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2">
-                <strong>Other</strong>
+              <div class="row" *ngIf="antiAging.History.MemoryOther !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <strong>Other</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.MemoryOther}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.MemoryOther}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Immune</strong>
+              <div class="row" *ngIf="antiAging.History.Immune !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Immune</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Immune}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Immune}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2">
-                <strong>Other</strong>
+              <div class="row" *ngIf="antiAging.History.ImmuneOther !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <strong>Other</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.ImmuneOther}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.ImmuneOther}}</div>
-            </div>
 
-            <div class="row">
-              <!--<div class="col-md-1"></div>-->
-              <div class="col-md-3">
-                <strong>Sexual Health</strong>
+              <div class="row" *ngIf="antiAging.History.Sexual !== null">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-3">
+                  <strong>Sexual Health</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Sexual}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Sexual}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-2">
-                <strong>Other</strong>
+              <div class="row" *ngIf="antiAging.History.SexualOther !== null">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <strong>Other</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.History.SexualOther}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.History.SexualOther}}</div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Exercise</strong>
+              <div class="row" *ngIf="antiAging.History.Exercise !== null">
+                <div class="col-md-3">
+                  <strong>Exercise</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.History.Exercise}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.History.Exercise}}</div>
             </div>
           </div>
           <!--End History-->
 
           <!--Genetic-->
-          <div *ngIf="antiAging.Genetic.Genetic !== null">
+          <div *ngIf="antiAging.IsGenetic">
             <div class="card-header">
               <div (click)="isGenetic = !isGenetic">
                 <span>
@@ -196,7 +203,7 @@
           <!--End Genetic-->
 
           <!--Family History-->
-          <div *ngIf="antiAging.FamilyHistory.Father !== null && antiAging.FamilyHistory.Mother !== null">
+          <div *ngIf="antiAging.IsFamilyHistory">
             <div class="card-header">
               <div (click)="isFamilyHistory = !isFamilyHistory">
                 <span>
@@ -223,95 +230,97 @@
           <!--End Family History-->
 
           <!--Physical Examination-->
-          <div class="card-header">
-            <div (click)="isPhysicalExamination = !isPhysicalExamination">
-              <span>
-                <b class="lead">Physical Examination</b>
-              </span>
-            </div>
-          </div>
-          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isPhysicalExamination">
-            <div class="row">
-              <div class="col-md-3">
-                <strong>General Appearance</strong>
+          <div *ngIf="antiAging.IsPhysicalExamination">
+            <div class="card-header">
+              <div (click)="isPhysicalExamination = !isPhysicalExamination">
+                <span>
+                  <b class="lead">Physical Examination</b>
+                </span>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.GeneralAppearance}}</div>
             </div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.GeneralOther}}</div>
-            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isPhysicalExamination">
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>General Appearance</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.GeneralAppearance}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.GeneralOther}}</div>
+              </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>ENT</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>ENT</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.ENT}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.ENT}}</div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Pharynx</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Pharynx</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.Pharynx}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.Pharynx}}</div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Tonsils</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Tonsils</strong>
+                </div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.Tonsils}}</div>
               </div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.Tonsils}}</div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Neck node</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Neck node</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.NeckNode}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.NeckNode}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.NeckNodeOther}}</div>
-            </div>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.NeckNodeOther}}</div>
+              </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Respiratory</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Respiratory</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.Respiratory}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.Respiratory}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.RespiratoryOther}}</div>
-            </div>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.RespiratoryOther}}</div>
+              </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Cardiovascular</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Cardiovascular</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.Cardiovascular}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.Cardiovascular}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.CardiovascularOther}}</div>
-            </div>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.CardiovascularOther}}</div>
+              </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Abdomen</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Abdomen</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.Abdomen}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.Abdomen}}</div>
-            </div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.AbdomenOther}}</div>
-            </div>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.AbdomenOther}}</div>
+              </div>
 
-            <div class="row">
-              <div class="col-md-3">
-                <strong>Physical Exam</strong>
+              <div class="row">
+                <div class="col-md-3">
+                  <strong>Physical Exam</strong>
+                </div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.PhysicalExam}}</div>
               </div>
-              <div class="col-md-9">{{antiAging.PhysicalExamination.PhysicalExam}}</div>
             </div>
           </div>
           <!--End Physical Examination-->
