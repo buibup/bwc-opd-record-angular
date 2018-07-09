@@ -3,55 +3,71 @@
     <div class="card">
       <div class="card-header">
         <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
-          <span>&#9733; <b>BWC Exercise</b> &#9733;</span>
+          <span>&#9733;
+            <b>BWC Exercise</b> &#9733;</span>
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
         <div *ngFor="let exercise of this.doctorService.exercises">
 
-          <!-- Exercise -->
           <div class="row">
+            <div class="col-md-2">
+              <strong>Date</strong>
+            </div>
+            <div class="col-md-2">
+              {{exercise.QUESDate | date: 'dd/MM/yyyy'}}
+            </div>
+            <div class="col-md-2">
+              <strong>Time</strong>
+            </div>
+            <div class="col-md-2">
+              {{exercise.QUESTime}}
+            </div>
+          </div><br/>
+
+          <!-- Exercise -->
+          <div class="row" *ngIf="exercise.QFrequency != null">
             <div class="col-md-2">
               <strong>Frequency</strong>
             </div>
             <div class="col-md-10 bg-info">{{exercise.QFrequency}}</div>
           </div>
 
-          <div class="row">
+          <div class="row" *ngIf="exercise.QTypeExercise != null">
             <div class="col-md-2">
               <strong>Type of exercise</strong>
             </div>
             <div class="col-md-10">{{exercise.QTypeExercise}}</div>
           </div>
 
-          <div class="row">
+          <div class="row" *ngIf="exercise.QListOfExercise != null">
             <div class="col-md-2">
               <strong>List of exercise</strong>
             </div>
             <div class="col-md-10 bg-info">{{exercise.QListOfExercise}}</div>
           </div>
-          <div class="row">
+          <div class="row" *ngIf="exercise.QListOfExerciseETC != null">
             <div class="col-md-2">
               <strong>Other</strong>
             </div>
             <div class="col-md-10">{{exercise.QListOfExerciseETC}}</div>
           </div>
 
-          <div class="row">
+          <div class="row" *ngIf="exercise.QDuration != null">
             <div class="col-md-2">
               <strong>Duration</strong>
             </div>
             <div class="col-md-10 bg-info">{{exercise.QDuration}}</div>
           </div>
 
-          <div class="row">
+          <div class="row" *ngIf="exercise.QAthleticInjuries != null">
             <div class="col-md-2">
               <strong>Athletic Injuries</strong>
             </div>
             <div class="col-md-10">{{exercise.QAthleticInjuries}}</div>
           </div>
 
-          <div class="row">
+          <div class="row" *ngIf="exercise.QAthleticInjuriesText != null">
             <div class="col-md-2">
               <strong>Specify</strong>
             </div>
