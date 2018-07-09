@@ -9,10 +9,28 @@
               <div (click)="setDoctorPanelDisplay(epi.PAADM_RowID); setEpisodeActive(epi.PAADM_RowID)">
                 <i class="icon-note"></i>
                 {{epi.PAADM_ADMNo}}&nbsp;&nbsp;
-                <i class="fa fa-thumb-tack"(click)="addEpisodePin(epi)" [ngClass]="{'pin': epi.pin, 'unpin': !epi.pin}"></i>&nbsp;&nbsp;
+                <i class="fa fa-thumb-tack" (click)="addEpisodePin(epi)" [ngClass]="{'pin': epi.pin, 'unpin': !epi.pin}"></i>&nbsp;&nbsp;
                 <i class="fa fa-times" (click)="removeEpisodePin(epi)"></i>
               </div>
             </ng-template>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-9">
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-1">
+                  <a target="_blank" href="http://10.90.10.34/ReportTK/ExportReport.aspx?Reportname=OPD_Record&HN=81-17-000282&EN=O81-18-001112&User=&Careprov=0">
+                    <button type="button" class="btn btn-dark">
+                      OPD Record
+                    </button>
+                  </a>
+                </div>
+                <div class="col-sm-1">
+                </div>
+              </div>
+            </div>
+            <br/>
             <div class="col-md-12">
               <app-vital-signs-opd></app-vital-signs-opd>
             </div>
