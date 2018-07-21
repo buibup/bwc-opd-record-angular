@@ -23,15 +23,17 @@
             <div class="col-md-2">
               {{exercise.QUESTime}}
             </div>
-          </div><br/>
+          </div>
+          <br/>
 
           <!-- Exercise -->
           <div class="row" *ngIf="exercise.QFrequency != null">
             <div class="col-md-2">
               <strong>Frequency</strong>
             </div>
-            <div class="col-md-10 bg-info">{{exercise.QFrequency}}</div>
+            <div class="col-md-10">{{exercise.QFrequency}}</div>
           </div>
+          <br>
 
           <div class="row" *ngIf="exercise.QTypeExercise != null">
             <div class="col-md-2">
@@ -39,12 +41,13 @@
             </div>
             <div class="col-md-10">{{exercise.QTypeExercise}}</div>
           </div>
+          <br>
 
           <div class="row" *ngIf="exercise.QListOfExercise != null">
             <div class="col-md-2">
               <strong>List of exercise</strong>
             </div>
-            <div class="col-md-10 bg-info">{{exercise.QListOfExercise}}</div>
+            <div class="col-md-10">{{exercise.QListOfExercise}}</div>
           </div>
           <div class="row" *ngIf="exercise.QListOfExerciseETC != null">
             <div class="col-md-2">
@@ -52,13 +55,15 @@
             </div>
             <div class="col-md-10">{{exercise.QListOfExerciseETC}}</div>
           </div>
+          <br>
 
           <div class="row" *ngIf="exercise.QDuration != null">
             <div class="col-md-2">
               <strong>Duration</strong>
             </div>
-            <div class="col-md-10 bg-info">{{exercise.QDuration}}</div>
+            <div class="col-md-10">{{exercise.QDuration}}</div>
           </div>
+          <br>
 
           <div class="row" *ngIf="exercise.QAthleticInjuries != null">
             <div class="col-md-2">
@@ -66,12 +71,13 @@
             </div>
             <div class="col-md-10">{{exercise.QAthleticInjuries}}</div>
           </div>
+          <br>
 
           <div class="row" *ngIf="exercise.QAthleticInjuriesText != null">
             <div class="col-md-2">
               <strong>Specify</strong>
             </div>
-            <div class="col-md-10 bg-info">{{exercise.QAthleticInjuriesText}}</div>
+            <div class="col-md-10">{{exercise.QAthleticInjuriesText}}</div>
           </div>
 
           <!-- End Exercise -->

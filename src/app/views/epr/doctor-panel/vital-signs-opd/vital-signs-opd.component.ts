@@ -10,7 +10,7 @@ import { DoctorService } from '../../../../services/doctor.service';
 })
 export class VitalSignsOpdComponent implements OnInit {
 
-  isCollapsed = true;
+  isCollapsed = false;
 
   constructor(public doctorService: DoctorService,
     public episodeService: EpisodeService) { }

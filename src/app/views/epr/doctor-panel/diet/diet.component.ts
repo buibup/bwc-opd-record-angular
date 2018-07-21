@@ -9,9 +9,9 @@ import { EpisodeService } from '../../../../services/episode.service';
 })
 export class DietComponent implements OnInit {
 
-  isCollapsed = true;
-  isDietaryPatterns = true;
-  isBehavioral = true;
+  isCollapsed = false;
+  isDietaryPatterns = false;
+  isBehavioral = false;
 
   constructor(public doctorService: DoctorService,
     episodeService: EpisodeService) { }

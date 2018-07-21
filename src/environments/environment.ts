@@ -7,7 +7,7 @@ export const environment = {
   production: false,
 
   // URL of development API
-  apiUrl: 'http://10.90.61.135/BwcOpdRecordApi/'
+  apiUrl: 'http://10.90.10.18/BwcOpdRecordApi/'
   // apiUrl: 'http://localhost/BwcOpdRecordApi/'
   // apiUrl: 'http://localhost:53464/'
   // apiUrl: 'http://localhost:58795/'

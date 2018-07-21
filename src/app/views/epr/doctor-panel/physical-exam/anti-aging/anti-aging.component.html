@@ -25,7 +25,7 @@
                 <div class="col-md-3">
                   <strong>Chief Complaint</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.ChiefComplaint}}</div>
+                <div class="col-md-9">{{antiAging.History.ChiefComplaint}}</div>
               </div>
               <div class="row" *ngIf="antiAging.History.ChiefComplaintOther !== null">
                 <div class="col-md-1"></div>
@@ -34,14 +34,16 @@
                 </div>
                 <div class="col-md-8">{{antiAging.History.ChiefComplaintOther}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.PresentIllness !== null">
                 <!--<div class="col-md-1"></div>-->
                 <div class="col-md-3">
                   <strong>Present illness</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.PresentIllness}}</div>
+                <div class="col-md-9">{{antiAging.History.PresentIllness}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.UnderlyingDisease !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -50,14 +52,16 @@
                 </div>
                 <div class="col-md-9">{{antiAging.History.UnderlyingDisease}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.CurrentMedication !== null">
                 <!--<div class="col-md-1"></div>-->
                 <div class="col-md-3">
                   <strong>Current Medication</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.CurrentMedication}}</div>
+                <div class="col-md-9">{{antiAging.History.CurrentMedication}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Supplementation !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -66,14 +70,16 @@
                 </div>
                 <div class="col-md-9">{{antiAging.History.Supplementation}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.HistoryInvestigation !== null">
                 <!--<div class="col-md-1"></div>-->
                 <div class="col-md-3">
                   <strong>History of Investigation</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.HistoryInvestigation}}</div>
+                <div class="col-md-9">{{antiAging.History.HistoryInvestigation}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.GI !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -82,14 +88,14 @@
                 </div>
                 <div class="col-md-9">{{antiAging.History.GI}}</div>
               </div>
-
               <div class="row" *ngIf="antiAging.History.GIOther !== null">
                 <div class="col-md-1"></div>
                 <div class="col-md-2">
                   <strong>Other</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.GIOther}}</div>
+                <div class="col-md-9">{{antiAging.History.GIOther}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Sleep !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -98,21 +104,21 @@
                 </div>
                 <div class="col-md-9">{{antiAging.History.Sleep}}</div>
               </div>
-
               <div class="row" *ngIf="antiAging.History.SleepHours !== null">
                 <div class="col-md-1"></div>
                 <div class="col-md-2"> </div>
-                <div class="col-md-1 bg-info">{{antiAging.History.SleepHours}}</div>
+                <div class="col-md-1">{{antiAging.History.SleepHours}}</div>
                 <div class="col-md-2">
                   <strong>Hours/Day</strong>
                 </div>
                 <div class="col-md-1" *ngIf="antiAging.History.SleepOther !== null">
                   Other
                 </div>
-                <div class="col-md-5 bg-info" *ngIf="antiAging.History.SleepOther !== null">
+                <div class="col-md-5" *ngIf="antiAging.History.SleepOther !== null">
                   {{antiAging.History.SleepOther}}
                 </div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Skin !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -126,8 +132,9 @@
                 <div class="col-md-2">
                   <strong>Other</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.SkinOther}}</div>
+                <div class="col-md-9">{{antiAging.History.SkinOther}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Memory !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -141,8 +148,9 @@
                 <div class="col-md-2">
                   <strong>Other</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.MemoryOther}}</div>
+                <div class="col-md-9">{{antiAging.History.MemoryOther}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Immune !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -156,8 +164,9 @@
                 <div class="col-md-2">
                   <strong>Other</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.ImmuneOther}}</div>
+                <div class="col-md-9">{{antiAging.History.ImmuneOther}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Sexual !== null">
                 <!--<div class="col-md-1"></div>-->
@@ -171,8 +180,9 @@
                 <div class="col-md-2">
                   <strong>Other</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.History.SexualOther}}</div>
+                <div class="col-md-9">{{antiAging.History.SexualOther}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.History.Exercise !== null">
                 <div class="col-md-3">
@@ -196,7 +206,7 @@
             <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isGenetic">
               <div class="row">
                 <div class="col-md-2"></div>
-                <div class="col-md-10 bg-info">{{antiAging.Genetic.Genetic}}</div>
+                <div class="col-md-10">{{antiAging.Genetic.Genetic}}</div>
               </div>
             </div>
           </div>
@@ -216,8 +226,9 @@
                 <div class="col-md-3">
                   <strong>Father</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.FamilyHistory.Father}}</div>
+                <div class="col-md-9">{{antiAging.FamilyHistory.Father}}</div>
               </div>
+              <br>
 
               <div class="row" *ngIf="antiAging.FamilyHistory.Mother !== null">
                 <div class="col-md-3">
@@ -243,19 +254,21 @@
                 <div class="col-md-3">
                   <strong>General Appearance</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.GeneralAppearance}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.GeneralAppearance}}</div>
               </div>
               <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-9">{{antiAging.PhysicalExamination.GeneralOther}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
                   <strong>ENT</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.ENT}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.ENT}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
@@ -263,13 +276,15 @@
                 </div>
                 <div class="col-md-9">{{antiAging.PhysicalExamination.Pharynx}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
                   <strong>Tonsils</strong>
                 </div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.Tonsils}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.Tonsils}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
@@ -279,8 +294,9 @@
               </div>
               <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.NeckNodeOther}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.NeckNodeOther}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
@@ -290,8 +306,9 @@
               </div>
               <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.RespiratoryOther}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.RespiratoryOther}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
@@ -301,8 +318,9 @@
               </div>
               <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.CardiovascularOther}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.CardiovascularOther}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">
@@ -312,8 +330,9 @@
               </div>
               <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-9 bg-info">{{antiAging.PhysicalExamination.AbdomenOther}}</div>
+                <div class="col-md-9">{{antiAging.PhysicalExamination.AbdomenOther}}</div>
               </div>
+              <br>
 
               <div class="row">
                 <div class="col-md-3">

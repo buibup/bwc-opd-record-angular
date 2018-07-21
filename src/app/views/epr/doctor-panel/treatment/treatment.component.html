@@ -32,29 +32,31 @@
                   <div class="col-md-3">
                     <strong>Advice diet control</strong>
                   </div>
-                  <div class="col-md-9 bg-info">{{item.Plan.QDiet}}</div>
+                  <div class="col-md-9">{{item.Plan.QDiet}}</div>
                 </div>
                 <div class="row" *ngIf="item.Plan.QDietText !== null">
                   <div class="col-md-3"></div>
                   <div class="col-md-9">{{item.Plan.QDietText}}</div>
                 </div>
+                <br>
 
                 <div class="row" *ngIf="item.Plan.QExercise !== null">
                   <div class="col-md-3">
                     <strong>Advice exercise</strong>
                   </div>
-                  <div class="col-md-9 bg-info">{{item.Plan.QExercise}}</div>
+                  <div class="col-md-9">{{item.Plan.QExercise}}</div>
                 </div>
                 <div class="row" *ngIf="item.Plan.QExerciseText !== null">
                   <div class="col-md-3"></div>
                   <div class="col-md-9 *ngIf=item.Plan.QExerciseText">{{item.Plan.QExerciseText}}</div>
                 </div>
+                <br>
 
                 <div class="row" *ngIf="item.Plan.QSleepText !== null">
                   <div class="col-md-3">
                     <strong>Sleep</strong>
                   </div>
-                  <div class="col-md-9 bg-info">{{item.Plan.QSleepText}}</div>
+                  <div class="col-md-9">{{item.Plan.QSleepText}}</div>
                 </div>
                 <div class="row" *ngIf="item.Plan.QPlanText !== null">
                   <div class="col-md-3">
@@ -92,26 +94,28 @@
                     </table>
                   </div>
                 </div>
+                <br>
 
                 <div class="row" *ngIf="item.Treatment.QSupplementW !== 0 && item.Treatment.QSupplementM !== 0 && item.Treatment.QSupplement !== null">
                   <div class="col-md-3">
                     <strong>Supplement</strong>
                   </div>
-                  <div class="col-md-1 bg-info">{{item.Treatment.QSupplementW}}</div>
+                  <div class="col-md-1">{{item.Treatment.QSupplementW}}</div>
                   <div class="col-md-1">
                     <strong>week</strong>
                   </div>
-                  <div class="col-md-1 bg-info">{{item.Treatment.QSupplementM}}</div>
+                  <div class="col-md-1">{{item.Treatment.QSupplementM}}</div>
                   <div class="col-md-2">
                     <strong>month</strong>
                   </div>
                   <div class="col-md-1">
                     <strong>Note:</strong>
                   </div>
-                  <div class="col-md-3 bg-info">
+                  <div class="col-md-3">
                     {{item.Treatment.QSupplement}}
                   </div>
                 </div>
+                <br>
 
                 <div class="row" *ngIf="item.Treatment.QFollowUpPhoneW !== 0 && item.Treatment.QFollowUpPhoneM !== 0">
                   <div class="col-md-3">
@@ -126,16 +130,17 @@
                     <strong>month</strong>
                   </div>
                 </div>
+                <br>
 
                 <div class="row" *ngIf="item.Treatment.QFollowUpW !== 0 && item.Treatment.QFollowUpMonth !== 0">
                   <div class="col-md-3">
                     <strong>Follow up</strong>
                   </div>
-                  <div class="col-md-1 bg-info">{{item.Treatment.QFollowUpW}}</div>
+                  <div class="col-md-1">{{item.Treatment.QFollowUpW}}</div>
                   <div class="col-md-1">
                     <strong>week</strong>
                   </div>
-                  <div class="col-md-1 bg-info">{{item.Treatment.QFollowUpMonth}}</div>
+                  <div class="col-md-1">{{item.Treatment.QFollowUpMonth}}</div>
                   <div class="col-md-2">
                     <strong>month</strong>
                   </div>

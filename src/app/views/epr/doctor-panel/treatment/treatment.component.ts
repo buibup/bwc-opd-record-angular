@@ -9,10 +9,10 @@ import { EpisodeService } from '../../../../services/episode.service';
 })
 export class TreatmentComponent implements OnInit {
 
-  isCollapsed = true;
-  isPlanAndTreatment = true;
-  isPlan = true;
-  isTreatment = true;
+  isCollapsed = false;
+  isPlanAndTreatment = false;
+  isPlan = false;
+  isTreatment = false;
 
   constructor(public doctorService: DoctorService,
     episodeService: EpisodeService) { }

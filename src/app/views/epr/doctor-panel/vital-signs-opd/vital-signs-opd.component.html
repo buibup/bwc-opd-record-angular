@@ -3,7 +3,8 @@
     <div class="card">
       <div class="card-header">
         <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
-          <span>&#9733; <b>Vital Signs OPD</b> &#9733;</span>
+          <span>&#9733;
+            <b>Vital Signs OPD</b> &#9733;</span>
         </button>
       </div>
       <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
@@ -12,8 +13,12 @@
             <div class="col-md-4">
               <strong>Observation Item</strong>
             </div>
-            <div class="col-md-8"><strong>{{vitalSignsOPD.ObsDate | date: 'dd/MM/yyyy'}} {{vitalSignsOPD.ObsTime}}</strong></div>
+            <div class="col-md-8">
+              <strong>{{vitalSignsOPD.ObsDate | date: 'dd/MM/yyyy'}} {{vitalSignsOPD.ObsTime}}</strong>
+            </div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.Weight != null">
             <div class="col-md-2">
               <strong>Weight</strong>
@@ -21,8 +26,10 @@
             <div class="col-md-2">
               <mark>Kilogram</mark>
             </div>
-            <div class="col-md-2 bg-info">{{vitalSignsOPD.Weight}}</div>
+            <div class="col-md-2">{{vitalSignsOPD.Weight}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.Height != null">
             <div class="col-md-2">
               <strong>Height</strong>
@@ -32,6 +39,8 @@
             </div>
             <div class="col-md-2">{{vitalSignsOPD.Height}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.Temperature != null">
             <div class="col-md-2">
               <strong>Temperature</strong>
@@ -39,8 +48,10 @@
             <div class="col-md-2">
               <mark>C</mark>
             </div>
-            <div class="col-md-2 bg-info">{{vitalSignsOPD.Temperature}}</div>
+            <div class="col-md-2">{{vitalSignsOPD.Temperature}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.Systolic != null || vitalSignsOPD.Diastolic !=null">
             <div class="col-md-2">
               <strong>Systolic / Diastolic</strong>
@@ -50,6 +61,8 @@
             </div>
             <div class="col-md-2">{{vitalSignsOPD.Systolic}} / {{vitalSignsOPD.Diastolic}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.Pulse != null">
             <div class="col-md-2">
               <strong>Pulse</strong>
@@ -57,8 +70,10 @@
             <div class="col-md-2">
               <mark>bt/min</mark>
             </div>
-            <div class="col-md-2 bg-info">{{vitalSignsOPD.Pulse}}</div>
+            <div class="col-md-2">{{vitalSignsOPD.Pulse}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.Respirations != null">
             <div class="col-md-2">
               <strong>Respirations</strong>
@@ -68,6 +83,8 @@
             </div>
             <div class="col-md-2">{{vitalSignsOPD.Respirations}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.BMI != null">
             <div class="col-md-2">
               <strong>BMI</strong>
@@ -75,8 +92,10 @@
             <div class="col-md-2">
               <mark>kg/m2</mark>
             </div>
-            <div class="col-md-2 bg-info">{{vitalSignsOPD.BMI}}</div>
+            <div class="col-md-2">{{vitalSignsOPD.BMI}}</div>
           </div>
+          <br>
+
           <div class="row" *ngIf="vitalSignsOPD.OxygenSaturation != null">
             <div class="col-md-2">
               <strong>Oxygen Saturation</strong>
