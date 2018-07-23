@@ -30,7 +30,6 @@ export class ApiService {
     } catch (error) {
       console.log(error);
     }
-
   }
 
   public getDoctorPanelByEpiRowId(epiRowId: number): Observable<DoctorPanel> {

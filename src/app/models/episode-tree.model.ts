@@ -13,6 +13,7 @@ export interface EpisodeTree {
   PAADM_DischgTime?: any;
   PAADM_Remark?: any;
   DoctorPanel: DoctorPanel;
+  Documents: Document[];
   VisitType: string;
   active?: any;
   pin?: boolean;
