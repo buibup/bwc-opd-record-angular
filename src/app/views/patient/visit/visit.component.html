@@ -13,7 +13,7 @@
         <small class="text-muted mr-3">
           <i class="icon-calendar"></i> {{episode.PAADM_AdmTime.substring(0, 5)}}
         </small>
-        <small class="text-muted" *ngIf="episode.Documents?.length > 0">
+        <small *ngIf="episode.Documents?.length > 0">
           <i class="icon-envelope-letter"></i>
           <span class="badge badge-pill badge-info">{{episode.Documents?.length}}</span>
         </small>
