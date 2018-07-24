@@ -64,6 +64,7 @@ import { TreatmentComponent } from './views/epr/doctor-panel/treatment/treatment
 import { AntiAgingComponent } from './views/epr/doctor-panel/physical-exam/anti-aging/anti-aging.component';
 import { EpisodeSelectedComponent } from './views/patient/visit/episode-selected/episode-selected.component';
 import { ScanDocumentsComponent } from './views/epr/scan-documents/scan-documents.component';
+import { EprComponent } from './views/epr/epr.component';
 
 @NgModule({
   imports: [
@@ -102,7 +103,8 @@ import { ScanDocumentsComponent } from './views/epr/scan-documents/scan-document
     TreatmentComponent,
     AntiAgingComponent,
     EpisodeSelectedComponent,
-    ScanDocumentsComponent
+    ScanDocumentsComponent,
+    EprComponent
   ],
   providers: [
     {
