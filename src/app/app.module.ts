@@ -26,8 +26,9 @@ import { DoctorService } from './services/doctor.service';
 import { PatientService } from './services/patient.service';
 import { EpisodeService } from './services/episode.service';
 
-// Collapse Component
+// Collapse, Accordion
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 const APP_CONTAINERS = [DefaultLayoutComponent];
 
@@ -81,6 +82,7 @@ import { ScanDocumentsComponent } from './views/epr/scan-documents/scan-document
     ChartsModule,
     MatTabsModule,
     MatCheckboxModule,
+    AccordionModule.forRoot(),
   ],
   declarations: [
     AppComponent,
