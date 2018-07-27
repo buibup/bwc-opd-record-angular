@@ -6,7 +6,7 @@
         <tabset>
           <tab *ngFor="let epi of this.episodeService.episodeList" [active]="epi.active">
             <ng-template tabHeading>
-              <div (click)="setDoctorPanelDisplay(epi.PAADM_RowID); setEpisodeActive(epi.PAADM_RowID)">
+              <div (click)="setDoctorPanelDisplay(epi.PAADM_RowID); setEpisodeActive(epi.PAADM_RowID, epi);">
                 <i class="icon-note"></i>
                 {{epi.PAADM_ADMNo}}&nbsp;&nbsp;
                 <i class="fa fa-thumb-tack" (click)="addEpisodePin(epi)" [ngClass]="{'pin': epi.pin, 'unpin': !epi.pin}"></i>&nbsp;&nbsp;

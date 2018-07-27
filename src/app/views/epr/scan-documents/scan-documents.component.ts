@@ -1,3 +1,5 @@
+import { EpisodeService } from './../../../services/episode.service';
+import { ApiService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +11,8 @@ export class ScanDocumentsComponent implements OnInit {
 
   isScanDocumentsOpen = true;
 
-  constructor() { }
+  constructor(public apiService: ApiService,
+  public episodeService: EpisodeService) { }
 
   ngOnInit() {
   }

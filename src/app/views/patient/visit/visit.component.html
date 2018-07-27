@@ -13,9 +13,9 @@
         <small class="text-muted mr-3">
           <i class="icon-calendar"></i> {{episode.PAADM_AdmTime.substring(0, 5)}}
         </small>
-        <small *ngIf="episode.Documents?.length > 0">
+        <small *ngIf="episode.DocumentFilter != null">
           <i class="icon-doc"></i>
-          <span class="badge badge-pill badge-info">{{episode.Documents?.length}}</span>
+          <span class="badge badge-pill badge-info">{{episode.DocumentFilter.Documents?.length}}</span>
         </small>
         <br/>
         <small class="text-muted">

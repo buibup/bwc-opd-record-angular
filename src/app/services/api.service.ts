@@ -19,7 +19,7 @@ export class ApiService {
   public getPatientInfoByPapmiNo(papmiNo: string): Observable<PatientInfoVM> {
     try {
       return this.http
-        .get<any>(this.baseUrl + 'api/OpdRecord/GetPatientInfoByPapmiNo/' + papmiNo + '/DoctorPanel/inactive/')
+        .get<any>(this.baseUrl + `api/OpdRecord/GetPatientInfoByPapmiNo/${papmiNo}/DoctorPanel/inactive/`)
         .pipe(
           tap( // Log the result or error
             // data => console.log(data),
@@ -34,7 +34,12 @@ export class ApiService {
 
   public getDoctorPanelByEpiRowId(epiRowId: number): Observable<DoctorPanel> {
     return this.http
-      .get<any>(this.baseUrl + 'api/OpdRecord/GetDoctorPanelByEpiRowId/' + epiRowId);
+      .get<any>(this.baseUrl + `api/OpdRecord/GetDoctorPanelByEpiRowId/${epiRowId}`);
+  }
+
+  public getDocumentContentType(hn: string, path: any): Observable<string> {
+    return this.http
+      .get<any>(this.baseUrl + `api/GetDocumentContentType/${hn}/${path}`);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

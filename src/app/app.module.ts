@@ -50,6 +50,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { MatTabsModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTreeModule } from '@angular/material/tree';
 
 // Import opd record component
 import { SearchComponent } from './views/patient/search/search.component';
@@ -84,6 +85,7 @@ import { EprComponent } from './views/epr/epr.component';
     MatTabsModule,
     MatCheckboxModule,
     AccordionModule.forRoot(),
+    MatTreeModule,
   ],
   declarations: [
     AppComponent,

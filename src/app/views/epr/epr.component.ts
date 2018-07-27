@@ -30,8 +30,9 @@ export class EprComponent implements OnInit {
     }
   }
 
-  public setEpisodeActive(epiRowId: number) {
+  public setEpisodeActive(epiRowId: number, episode: EpisodeTree) {
     this.episodeService.setEpisodeActive(epiRowId);
+    this.episodeService.setEpisodeSeleted(episode);
   }
 
   public addEpisodePin(episode: EpisodeTree) {
