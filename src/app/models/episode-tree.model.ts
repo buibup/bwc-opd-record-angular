@@ -1,4 +1,5 @@
 import { DoctorPanel } from './doctor-panel.model';
+import { DocumentFilter } from './document-filter.model';
 
 export interface EpisodeTree {
   PAADM_RowID: number;
@@ -13,7 +14,7 @@ export interface EpisodeTree {
   PAADM_DischgTime?: any;
   PAADM_Remark?: any;
   DoctorPanel: DoctorPanel;
-  Documents: Document[];
+  DocumentFilter: DocumentFilter;
   VisitType: string;
   active?: any;
   pin?: boolean;
