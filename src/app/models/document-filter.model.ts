@@ -1,7 +1,10 @@
 import { Document } from './document.model';
 
-export interface DocumentFilter {
-    Doctors: any[];
-    DocumentTypes: any[];
-    Documents: Document[];
+export class DocumentFilter {
+  Doctors: any[];
+  isDoctorsActive = false;
+  DocumentTypes: any[];
+  isDocumentTypesActive = false;
+  Documents: Document[];
+  isDocumentsActive = false;
 }

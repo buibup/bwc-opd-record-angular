@@ -1,16 +1,23 @@
+import { DocumentFilter } from './../models/document-filter.model';
 import { DoctorService } from './doctor.service';
 import { DoctorPanel } from './../models/doctor-panel.model';
 import { Injectable, Inject, Input } from '@angular/core';
 import { EpisodeTree } from '../models/episode-tree.model';
+import { DocumentFilterEnum } from '../enums';
 
 @Injectable()
 export class EpisodeService {
   @Input() episodeTree: EpisodeTree[];
   episodeSelected: EpisodeTree;
   episodeList: EpisodeTree[] = [];
+  documentFilter: DocumentFilter = new DocumentFilter();
 
-  constructor(public doctorService: DoctorService) {
+  constructor(public doctorService: DoctorService) {}
 
+  public setDefaultdocumentFilterActive() {
+    this.documentFilter.isDoctorsActive = true;
+    this.documentFilter.isDocumentsActive = false;
+    this.documentFilter.isDocumentTypesActive = false;
   }
 
   public setEpisodeTree(episodeTree: EpisodeTree[]) {
@@ -21,7 +28,10 @@ export class EpisodeService {
     this.episodeSelected = episodeSelected;
   }
 
-  public addDoctorPanelToEpisodeTree(epiRowId: number, doctorPanel: DoctorPanel) {
+  public addDoctorPanelToEpisodeTree(
+    epiRowId: number,
+    doctorPanel: DoctorPanel
+  ) {
     const item = this.episodeList.filter(e => e.PAADM_RowID === epiRowId)[0];
     if (item) {
       item.DoctorPanel = doctorPanel;
@@ -30,7 +40,9 @@ export class EpisodeService {
   }
 
   public addEpisode(episode: EpisodeTree) {
-    const item = this.episodeList.filter(e => e.PAADM_RowID === episode.PAADM_RowID)[0];
+    const item = this.episodeList.filter(
+      e => e.PAADM_RowID === episode.PAADM_RowID
+    )[0];
     if (item == null) {
       // add new episode
       this.episodeList.push(episode);
@@ -66,6 +78,18 @@ export class EpisodeService {
     }
   }
 
+  public setDocumentFilterActive(documentFilterEnum: DocumentFilterEnum) {
+    this.clearDocumentFilterActive();
+
+    if (documentFilterEnum === DocumentFilterEnum.Doctors) {
+      this.documentFilter.isDoctorsActive = true;
+    } else if (documentFilterEnum === DocumentFilterEnum.DocumentTypes) {
+      this.documentFilter.isDocumentTypesActive = true;
+    } else if (documentFilterEnum === DocumentFilterEnum.All) {
+      this.documentFilter.isDocumentsActive = true;
+    }
+  }
+
   public addEpisodePin(episode: EpisodeTree) {
     const addPin = episode;
     addPin.pin = addPin.pin ? false : true;
@@ -73,17 +97,15 @@ export class EpisodeService {
   }
 
   public clearEpisodeListInactive() {
-    this.episodeList.forEach(e => e.active = false);
+    this.episodeList.forEach(e => (e.active = false));
   }
 
   public clearEpisodeListUnpin() {
-    this.episodeList.forEach(
-      function(item, index, object) {
-        if (!item.pin) {
-          object.splice(index, 1);
-        }
+    this.episodeList.forEach(function(item, index, object) {
+      if (!item.pin) {
+        object.splice(index, 1);
       }
-    );
+    });
   }
 
   public removeEpisode(episode: EpisodeTree) {
@@ -106,5 +128,11 @@ export class EpisodeService {
     this.episodeSelected = null;
     this.episodeList = [];
     this.episodeTree = null;
+  }
+
+  clearDocumentFilterActive() {
+    this.documentFilter.isDoctorsActive = false;
+    this.documentFilter.isDocumentsActive = false;
+    this.documentFilter.isDocumentTypesActive = false;
   }
 }

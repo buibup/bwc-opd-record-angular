@@ -2,29 +2,38 @@
   <accordion-group heading="Scan Documents" [isOpen]="isScanDocumentsOpen">
 
     <tabset>
-      <tab [active]="true">
-          <ng-template tabHeading>
-              <div>
-                <i class="icon-note"></i>
-                Doctors
-              </div>
-            </ng-template>
+      <tab [active]="this.episodeService.documentFilter.isDoctorsActive">
+        <ng-template tabHeading>
+          <div (click)="setDocumentFilterCurrentActive(DocumentFilter.Doctors)">
+            <i class="icon-docs"></i>
+            Doctors
+          </div>
+        </ng-template>
+        <div>
+          <app-doctors-filter></app-doctors-filter>
+        </div>
       </tab>
-      <tab>
-          <ng-template tabHeading>
-              <div>
-                <i class="icon-note"></i>
-                Document Type
-              </div>
-            </ng-template>
+      <tab [active]="this.episodeService.documentFilter.isDocumentTypesActive">
+        <ng-template tabHeading>
+          <div (click)="setDocumentFilterCurrentActive(DocumentFilter.DocumentTypes)">
+            <i class="icon-docs"></i>
+            Document Type
+          </div>
+        </ng-template>
+        <div>
+          <app-document-types-filter></app-document-types-filter>
+        </div>
       </tab>
-      <tab>
-          <ng-template tabHeading>
-              <div>
-                <i class="icon-note"></i>
-                All
-              </div>
-            </ng-template>
+      <tab [active]="this.episodeService.documentFilter.isDocumentsActive">
+        <ng-template tabHeading>
+          <div (click)="setDocumentFilterCurrentActive(DocumentFilter.All)">
+            <i class="icon-docs"></i>
+            All
+          </div>
+        </ng-template>
+        <div>
+          <app-document-all-filter></app-document-all-filter>
+        </div>
       </tab>
     </tabset>
 
