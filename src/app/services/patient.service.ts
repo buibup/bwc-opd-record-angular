@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 
 import { HttpClient } from '@angular/common/http';
 
-import {Observable, of} from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { EpisodeTree } from '../models/episode-tree.model';
 import { EpisodeService } from './episode.service';
@@ -17,23 +17,24 @@ const API_URL = environment.apiUrl;
   providedIn: 'root'
 })
 export class PatientService {
-
   baseUrl: string;
   patientInfoVM: PatientInfoVM;
   episodeTree: EpisodeTree[];
+  hn: string;
 
-  constructor(public episodeService: EpisodeService,
-    public doctorService: DoctorService) {
-
-  }
+  constructor(
+    public episodeService: EpisodeService,
+    public doctorService: DoctorService
+  ) {}
 
   public setPatientInfoVM(patientInfoVM: PatientInfoVM) {
     this.clear();
     if (patientInfoVM != null) {
       this.patientInfoVM = patientInfoVM;
+      this.hn = patientInfoVM.PatientInfo.PAPMI_No;
       this.episodeTree = patientInfoVM.EpisodeTree;
       this.episodeService.setEpisodeTree(patientInfoVM.EpisodeTree);
-      console.log(this.patientInfoVM.EpisodeTree);
+      // console.log(this.patientInfoVM.EpisodeTree);
     }
   }
 

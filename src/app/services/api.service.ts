@@ -11,19 +11,22 @@ import { DoctorPanel } from '../models/doctor-panel.model';
   providedIn: 'root'
 })
 export class ApiService {
-
   baseUrl: string = environment.apiUrl;
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {}
 
   public getPatientInfoByPapmiNo(papmiNo: string): Observable<PatientInfoVM> {
     try {
       return this.http
-        .get<any>(this.baseUrl + `api/OpdRecord/GetPatientInfoByPapmiNo/${papmiNo}/DoctorPanel/inactive/`)
+        .get<any>(
+          this.baseUrl +
+            `api/OpdRecord/GetPatientInfoByPapmiNo/${papmiNo}/DoctorPanel/inactive/`
+        )
         .pipe(
-          tap( // Log the result or error
+          tap(
+            // Log the result or error
             // data => console.log(data),
-            // error => console.log(error)
+            error => console.log(error)
           ),
           catchError(this.handleError('getPatientInfoByPapmiNo', []))
         );
@@ -33,18 +36,26 @@ export class ApiService {
   }
 
   public getDoctorPanelByEpiRowId(epiRowId: number): Observable<DoctorPanel> {
-    return this.http
-      .get<any>(this.baseUrl + `api/OpdRecord/GetDoctorPanelByEpiRowId/${epiRowId}`);
+    return this.http.get<any>(
+      this.baseUrl + `api/OpdRecord/GetDoctorPanelByEpiRowId/${epiRowId}`
+    );
   }
 
-  public getDocumentContentType(hn: string, path: any): Observable<string> {
-    return this.http
-      .get<any>(this.baseUrl + `api/GetDocumentContentType/${hn}/${path}`);
+  public getDocumentContentType(hn: string, path: any) {
+    return this.http.get(
+      this.baseUrl + `api/OpdRecord/GetDocumentContentType/${hn}/${path}`,
+      {
+        responseType: 'text'
+      }
+    );
+  }
+
+  public getDocumentUrl(hn: string, path: any) {
+    return `${this.baseUrl}api/OpdRecord/GetDocument/${hn}/${path}`;
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       if (error.status === 500) {
         return Observable.throw(new Error(error.status));
       } else if (error.status === 400) {

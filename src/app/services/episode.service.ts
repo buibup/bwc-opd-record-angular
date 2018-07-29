@@ -1,9 +1,12 @@
+import { PatientService } from './patient.service';
+import { ApiService } from './api.service';
 import { DocumentFilter } from './../models/document-filter.model';
 import { DoctorService } from './doctor.service';
 import { DoctorPanel } from './../models/doctor-panel.model';
 import { Injectable, Inject, Input } from '@angular/core';
 import { EpisodeTree } from '../models/episode-tree.model';
 import { DocumentFilterEnum } from '../enums';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class EpisodeService {
@@ -11,6 +14,9 @@ export class EpisodeService {
   episodeSelected: EpisodeTree;
   episodeList: EpisodeTree[] = [];
   documentFilter: DocumentFilter = new DocumentFilter();
+  docContentType: string;
+  documentDisplayUrl: string;
+  isPdf = true;
 
   constructor(public doctorService: DoctorService) {}
 
@@ -25,6 +31,7 @@ export class EpisodeService {
   }
 
   public setEpisodeSeleted(episodeSelected: EpisodeTree) {
+    this.docContentType = '';
     this.episodeSelected = episodeSelected;
   }
 
@@ -88,6 +95,18 @@ export class EpisodeService {
     } else if (documentFilterEnum === DocumentFilterEnum.All) {
       this.documentFilter.isDocumentsActive = true;
     }
+  }
+
+  public setDocumentDisplay(hn: string, path: any, contentType: string) {
+    this.docContentType = contentType;
+    console.log(this.docContentType);
+    if (this.docContentType.search('pdf') === -1) {
+      this.isPdf = false;
+    }
+    this.documentDisplayUrl = `${
+      environment.apiUrl
+    }api/OpdRecord/GetDocument/${hn}/${path}`;
+    console.log(this.documentDisplayUrl);
   }
 
   public addEpisodePin(episode: EpisodeTree) {
