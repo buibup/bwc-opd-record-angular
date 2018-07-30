@@ -1,3 +1,19 @@
-<p>
-  document-all-filter works!
-</p>
+<div *ngIf="this.episodeService.documentFilter.Documents?.length > 0">
+  <div class="list-group" *ngFor="let document of this.episodeService.documentFilter.Documents">
+    <accordion>
+      <accordion-group>
+        <button class="btn btn-link btn-block clearfix" accordion-heading (click)="setIsPdf(document.ContentType)">
+          <div class="pull-left float-left">{{document.DateCreated | date: 'dd/MM/yyyy'}} {{document.TimeCreated}} {{document.Notes}} {{document.DocumentType}}</div>
+          <!-- <span class="badge badge-secondary float-right pull-right">{{item.Documents?.length}}</span> -->
+        </button>
+        <div class="embed-responsive embed-responsive-4by3" *ngIf="isPdf">
+          <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" allowfullscreen></iframe>
+        </div>
+        <div *ngIf="!isPdf">
+          <embed [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" [type]="document.ContentType" width="100%"
+            height="100%">
+        </div>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>

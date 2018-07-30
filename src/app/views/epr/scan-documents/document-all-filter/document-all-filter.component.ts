@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EpisodeService } from '../../../../services/episode.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-document-all-filter',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./document-all-filter.component.scss']
 })
 export class DocumentAllFilterComponent implements OnInit {
+  isPdf: boolean;
 
-  constructor() { }
+  constructor(
+    public episodeService: EpisodeService,
+    public sanitizer: DomSanitizer
+  ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  setIsPdf(contentType: string) {
+    if (contentType.search('pdf') !== -1) {
+      this.isPdf = true;
+    } else {
+      this.isPdf = false;
+    }
   }
-
 }

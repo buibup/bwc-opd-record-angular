@@ -8,7 +8,7 @@
         </button>
         <accordion>
           <accordion-group *ngFor="let document of item.Documents">
-            <button class="btn btn-link btn-block clearfix" accordion-heading (click)="setDocumentDisplay(document.ContentType)">
+            <button class="btn btn-link btn-block clearfix" accordion-heading (click)="setIsPdf(document.ContentType)">
               <div class="pull-left float-left">
                 {{document.DateCreated | date: 'dd/MM/yyyy'}} {{document.TimeCreated}} {{document.Notes}} {{document.DocumentType}}
               </div>
@@ -17,7 +17,8 @@
               <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" allowfullscreen></iframe>
             </div>
             <div *ngIf="!isPdf">
-              <embed [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" type="document.ContentType" width="100%" height="100%">
+              <embed [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" [type]="document.ContentType" width="100%"
+                height="100%">
             </div>
           </accordion-group>
         </accordion>
