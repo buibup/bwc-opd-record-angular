@@ -9,4 +9,6 @@ export interface Document {
   DocumentType: string;
   ContentType: string;
   DocumentUrl: string;
+  DocType: string;
+  IsPdf: boolean;
 }
