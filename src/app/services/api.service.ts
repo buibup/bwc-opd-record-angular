@@ -1,3 +1,4 @@
+import { DocumentFilter } from './../models/document-filter.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
@@ -25,7 +26,7 @@ export class ApiService {
         .pipe(
           tap(
             // Log the result or error
-            // data => console.log(data),
+            data => console.log('getPatientInfoByPapmiNo'),
             error => console.log(error)
           ),
           catchError(this.handleError('getPatientInfoByPapmiNo', []))
@@ -48,6 +49,22 @@ export class ApiService {
         responseType: 'text'
       }
     );
+  }
+
+  public getDocumentFilterByEpiRowId(
+    epiRowId: number
+  ): Observable<DocumentFilter> {
+    return this.http
+      .get<any>(
+        this.baseUrl + `api/OpdRecord/GetDocumentFilterByEpiRowId/${epiRowId}`
+      )
+      .pipe(
+        tap(
+          data => console.log('getDocumentFilterByEpiRowId'),
+          error => console.log(error)
+        ),
+        catchError(this.handleError('getDocumentFilterByEpiRowId', []))
+      );
   }
 
   public getDocumentUrl(hn: string, path: any) {

@@ -14,9 +14,6 @@ export class EpisodeService {
   episodeSelected: EpisodeTree;
   episodeList: EpisodeTree[] = [];
   documentFilter: DocumentFilter = new DocumentFilter();
-  docContentType: string;
-  documentDisplayUrl: string;
-  isPdf = true;
 
   constructor(public doctorService: DoctorService) {}
 
@@ -26,13 +23,19 @@ export class EpisodeService {
     this.documentFilter.isDocumentTypesActive = false;
   }
 
+  public setDocumentFilter(documentFilter: DocumentFilter) {
+    this.documentFilter = documentFilter;
+    this.setDefaultdocumentFilterActive();
+    console.log(this.documentFilter);
+  }
+
   public setEpisodeTree(episodeTree: EpisodeTree[]) {
     this.episodeTree = episodeTree;
   }
 
   public setEpisodeSeleted(episodeSelected: EpisodeTree) {
-    this.docContentType = '';
     this.episodeSelected = episodeSelected;
+    console.log(this.episodeSelected);
   }
 
   public addDoctorPanelToEpisodeTree(
@@ -97,18 +100,6 @@ export class EpisodeService {
     }
   }
 
-  public setDocumentDisplay(hn: string, path: any, contentType: string) {
-    this.docContentType = contentType;
-    console.log(this.docContentType);
-    if (this.docContentType.search('pdf') === -1) {
-      this.isPdf = false;
-    }
-    this.documentDisplayUrl = `${
-      environment.apiUrl
-    }api/OpdRecord/GetDocument/${hn}/${path}`;
-    console.log(this.documentDisplayUrl);
-  }
-
   public addEpisodePin(episode: EpisodeTree) {
     const addPin = episode;
     addPin.pin = addPin.pin ? false : true;
@@ -147,6 +138,12 @@ export class EpisodeService {
     this.episodeSelected = null;
     this.episodeList = [];
     this.episodeTree = null;
+  }
+
+  clearDocumentFilter() {
+    this.documentFilter.Doctors = [];
+    this.documentFilter.DocumentTypes = [];
+    this.documentFilter.Documents = [];
   }
 
   clearDocumentFilterActive() {
