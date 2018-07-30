@@ -20,6 +20,19 @@ export class ScanDocumentsComponent implements OnInit {
 
   ngOnInit() {
     this.episodeService.setDefaultdocumentFilterActive();
+    if (this.episodeService.episodeSelected.DocumentFilter !== null) {
+      this.apiService
+        .getDocumentFilterByEpiRowId(
+          this.episodeService.episodeSelected.PAADM_RowID
+        )
+        .subscribe(
+          data => this.episodeService.setDocumentFilter(data),
+          error => console.log(error)
+        );
+    } else {
+      this.episodeService.setDefaultdocumentFilterActive();
+      this.episodeService.clearDocumentFilter();
+    }
   }
 
   setDocumentFilterCurrentActive(documentFilterEnum: DocumentFilterEnum) {

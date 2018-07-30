@@ -12,34 +12,15 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./doctors-filter.component.scss']
 })
 export class DoctorsFilterComponent implements OnInit {
-  url = '';
   isPdf: boolean;
-  documentUrl = '';
 
   constructor(
-    private http: HttpClient,
     public episodeService: EpisodeService,
     private apiService: ApiService,
-    public patientService: PatientService,
     public sanitizer: DomSanitizer
   ) {}
 
-  ngOnInit() {
-    this.url = this.apiService.baseUrl;
-    if (this.episodeService.episodeSelected.DocumentFilter !== null) {
-      this.apiService
-        .getDocumentFilterByEpiRowId(
-          this.episodeService.episodeSelected.PAADM_RowID
-        )
-        .subscribe(
-          data => this.episodeService.setDocumentFilter(data),
-          error => console.log(error)
-        );
-    } else {
-      this.episodeService.setDefaultdocumentFilterActive();
-      this.episodeService.clearDocumentFilter();
-    }
-  }
+  ngOnInit() {}
 
   setDocumentDisplay(contentType: string) {
     console.log(contentType.search('pdf') !== -1);
