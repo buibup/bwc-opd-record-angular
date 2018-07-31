@@ -14,4 +14,8 @@ export class DocumentTypesFilterComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
+
+  log(data: any) {
+    console.log(data);
+  }
 }

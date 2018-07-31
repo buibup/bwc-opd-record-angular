@@ -9,7 +9,7 @@
         <div class="embed-responsive embed-responsive-4by3" *ngIf="document.IsPdf && document.IsOpen">
           <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" allowfullscreen></iframe>
         </div>
-        <div *ngIf="!document.IsPdf && document.IsOpen">
+        <div *ngIf="!(document.IsPdf && document.IsOpen)">
           <embed [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" [type]="document.ContentType" width="100%"
             height="100%">
         </div>
