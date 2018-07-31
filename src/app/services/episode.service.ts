@@ -26,7 +26,7 @@ export class EpisodeService {
   public setDocumentFilter(documentFilter: DocumentFilter) {
     this.documentFilter = documentFilter;
     this.setDefaultdocumentFilterActive();
-    console.log(this.documentFilter);
+    // console.log(this.documentFilter);
   }
 
   public setEpisodeTree(episodeTree: EpisodeTree[]) {

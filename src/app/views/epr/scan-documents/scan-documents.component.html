@@ -9,7 +9,7 @@
             Doctors
           </div>
         </ng-template>
-        <div>
+        <div *ngIf="this.episodeService.documentFilter.isDoctorsActive">
           <app-doctors-filter></app-doctors-filter>
         </div>
       </tab>
@@ -20,7 +20,7 @@
             Document Type
           </div>
         </ng-template>
-        <div>
+        <div *ngIf="this.episodeService.documentFilter.isDocumentTypesActive">
           <app-document-types-filter></app-document-types-filter>
         </div>
       </tab>
@@ -31,19 +31,10 @@
             All
           </div>
         </ng-template>
-        <div>
+        <div *ngIf="this.episodeService.documentFilter.isDocumentsActive">
           <app-document-all-filter></app-document-all-filter>
         </div>
       </tab>
     </tabset>
-
-    <!-- <embed src="http://10.90.10.18/BwcOpdRecordApi/api/OpdRecord/GetDocument/81-17-000017/1164" type="image/jpg" width="100%"
-      height="100%"> -->
-
-    <!-- 4:3 aspect ratio -->
-    <!-- <div class="embed-responsive embed-responsive-4by3">
-      <iframe class="embed-responsive-item" src="http://10.90.10.18/BwcOpdRecordApi/api/OpdRecord/GetDocument/81-17-000017/489"
-        allowfullscreen></iframe>
-    </div> -->
   </accordion-group>
 </accordion>

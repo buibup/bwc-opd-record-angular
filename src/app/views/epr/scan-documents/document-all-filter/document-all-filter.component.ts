@@ -14,4 +14,9 @@ export class DocumentAllFilterComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
+
+  log(event: boolean) {
+    // console.log(`Accordion has been ${event ? 'opened' : 'closed'}`);
+    console.log(`${event}`);
+  }
 }

@@ -6,17 +6,17 @@
           <div class="pull-left float-left">{{item.DocumentTypeName}}</div>
           <span class="badge badge-secondary float-right pull-right">{{item.Documents?.length}}</span>
         </button>
-        <accordion>
-          <accordion-group *ngFor="let document of item.Documents">
+        <accordion *ngFor="let document of item.Documents">
+          <accordion-group (click)="document.IsOpen = !document.IsOpen">
             <button class="btn btn-link btn-block clearfix" accordion-heading>
               <div class="pull-left float-left">
                 {{document.DateCreated | date: 'dd/MM/yyyy'}} {{document.TimeCreated}} {{document.Notes}} {{document.DocumentType}}
               </div>
             </button>
-            <div class="embed-responsive embed-responsive-4by3" *ngIf="document.IsPdf">
+            <div class="embed-responsive embed-responsive-4by3" *ngIf="document.IsPdf && document.IsOpen">
               <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" allowfullscreen></iframe>
             </div>
-            <div *ngIf="!document.IsPdf">
+            <div *ngIf="!document.IsPdf && document.IsOpen">
               <embed [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" [type]="document.ContentType" width="100%"
                 height="100%">
             </div>

@@ -8,10 +8,16 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./doctors-filter.component.scss']
 })
 export class DoctorsFilterComponent implements OnInit {
+
   constructor(
     public episodeService: EpisodeService,
     public sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {}
+
+  log(event: boolean) {
+    // console.log(`Accordion has been ${event ? 'opened' : 'closed'}`);
+    console.log(`${event}`);
+  }
 }

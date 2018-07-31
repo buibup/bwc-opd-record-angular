@@ -1,4 +1,4 @@
-export interface Document {
+export class Document {
   DateCreated: Date;
   TimeCreated: any;
   SADST_Code: string;
@@ -11,4 +11,5 @@ export interface Document {
   DocumentUrl: string;
   DocType: string;
   IsPdf: boolean;
+  IsOpen = false;
 }

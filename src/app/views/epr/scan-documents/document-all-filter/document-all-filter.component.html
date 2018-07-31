@@ -1,15 +1,15 @@
 <div *ngIf="this.episodeService.documentFilter.Documents?.length > 0">
-  <div class="list-group" *ngFor="let document of this.episodeService.documentFilter.Documents">
-    <accordion>
-      <accordion-group>
+  <div class="list-group">
+    <accordion *ngFor="let document of this.episodeService.documentFilter.Documents">
+      <accordion-group (click)="document.IsOpen = !document.IsOpen">
         <button class="btn btn-link btn-block clearfix" accordion-heading>
           <div class="pull-left float-left">{{document.DateCreated | date: 'dd/MM/yyyy'}} {{document.TimeCreated}} {{document.Notes}} {{document.DocumentType}}</div>
           <!-- <span class="badge badge-secondary float-right pull-right">{{item.Documents?.length}}</span> -->
         </button>
-        <div class="embed-responsive embed-responsive-4by3" *ngIf="document.IsPdf">
+        <div class="embed-responsive embed-responsive-4by3" *ngIf="document.IsPdf && document.IsOpen">
           <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" allowfullscreen></iframe>
         </div>
-        <div *ngIf="!document.IsPdf">
+        <div *ngIf="!document.IsPdf && document.IsOpen">
           <embed [src]="sanitizer.bypassSecurityTrustResourceUrl(document.DocumentUrl)" [type]="document.ContentType" width="100%"
             height="100%">
         </div>
