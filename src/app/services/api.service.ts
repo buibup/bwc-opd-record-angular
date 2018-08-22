@@ -7,6 +7,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { PatientInfoVM } from '../models/patient-info-vm.model';
 import { DoctorPanel } from '../models/doctor-panel.model';
+import { CustomerAgree } from '../models/customer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,19 @@ export class ApiService {
 
   public getDocumentUrl(hn: string, path: any) {
     return `${this.baseUrl}api/OpdRecord/GetDocument/${hn}/${path}`;
+  }
+
+  public getCustomerAgrees(papmiRowId: number): Observable<CustomerAgree[]> {
+    return this.http.get<any>(
+      this.baseUrl + `api/ConsentForm/GetCustomerAgrees/${papmiRowId}`
+    )
+    .pipe(
+      tap(
+        data => console.log('getCustomerAgrees'),
+        error => console.log(error)
+      ),
+      catchError(this.handleError('getCustomerAgrees', []))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

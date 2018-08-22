@@ -1,3 +1,5 @@
+import { ApiService } from './api.service';
+import { CustomerAgree } from './../models/customer.model';
 import { DoctorService } from './doctor.service';
 import { PatientInfoVM } from './../models/patient-info-vm.model';
 import { Injectable } from '@angular/core';
@@ -20,11 +22,13 @@ export class PatientService {
   baseUrl: string;
   patientInfoVM: PatientInfoVM;
   episodeTree: EpisodeTree[];
+  customerAgrees: CustomerAgree[];
   hn: string;
 
   constructor(
     public episodeService: EpisodeService,
-    public doctorService: DoctorService
+    public doctorService: DoctorService,
+    public apiService: ApiService
   ) {}
 
   public setPatientInfoVM(patientInfoVM: PatientInfoVM) {
@@ -34,8 +38,16 @@ export class PatientService {
       this.hn = patientInfoVM.PatientInfo.PAPMI_No;
       this.episodeTree = patientInfoVM.EpisodeTree;
       this.episodeService.setEpisodeTree(patientInfoVM.EpisodeTree);
+      this.apiService.getCustomerAgrees(patientInfoVM.PatientInfo.PAPMI_RowId1)
+        .subscribe(c => this.setCustomerAgrees(c));
       // console.log(this.patientInfoVM.EpisodeTree);
     }
+  }
+
+  public setCustomerAgrees(customerAgrees: CustomerAgree[]) {
+    this.customerAgrees = [];
+    this.customerAgrees = customerAgrees;
+    console.log(customerAgrees);
   }
 
   public clear() {

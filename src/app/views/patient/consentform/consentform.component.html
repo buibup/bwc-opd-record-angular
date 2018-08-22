@@ -1,0 +1,94 @@
+<ng-container *ngIf="this.patietnService.customerAgrees">
+  <div class="list-group list-group-accent" *ngFor="let item of this.patietnService.customerAgrees">
+    <a target="_blank" href="http://10.90.10.18/ConsentForm/?q=customerid={{item.customerId}}&templateid={{item.templateId}}">
+        <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+            <div class="avatar float-right">
+              <img class="img-avatar" src="" alt="">
+            </div>
+            <div>
+              <strong>{{item.signedAt | date: 'dd/MM/yyyy HH:mm:ss'}}</strong>
+            </div>
+            <small class="text-muted mr-3">
+              <i class="icon-doc"></i> {{item.name}}
+            </small>
+          </div>
+    </a>
+  </div>
+</ng-container>
+
+<!-- <div class="p-3">
+  <div class="message">
+    <div class="py-3 pb-5 mr-3 float-left">
+      <div class="avatar">
+        <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <span class="avatar-status badge-success"></span>
+      </div>
+    </div>
+    <div>
+      <small class="text-muted">Lukasz Holeczek</small>
+      <small class="text-muted float-right mt-1">1:52 PM</small>
+    </div>
+    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+  </div>
+  <hr>
+  <div class="message">
+    <div class="py-3 pb-5 mr-3 float-left">
+      <div class="avatar">
+        <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <span class="avatar-status badge-success"></span>
+      </div>
+    </div>
+    <div>
+      <small class="text-muted">Lukasz Holeczek</small>
+      <small class="text-muted float-right mt-1">1:52 PM</small>
+    </div>
+    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+  </div>
+  <hr>
+  <div class="message">
+    <div class="py-3 pb-5 mr-3 float-left">
+      <div class="avatar">
+        <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <span class="avatar-status badge-success"></span>
+      </div>
+    </div>
+    <div>
+      <small class="text-muted">Lukasz Holeczek</small>
+      <small class="text-muted float-right mt-1">1:52 PM</small>
+    </div>
+    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+  </div>
+  <hr>
+  <div class="message">
+    <div class="py-3 pb-5 mr-3 float-left">
+      <div class="avatar">
+        <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <span class="avatar-status badge-success"></span>
+      </div>
+    </div>
+    <div>
+      <small class="text-muted">Lukasz Holeczek</small>
+      <small class="text-muted float-right mt-1">1:52 PM</small>
+    </div>
+    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+  </div>
+  <hr>
+  <div class="message">
+    <div class="py-3 pb-5 mr-3 float-left">
+      <div class="avatar">
+        <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <span class="avatar-status badge-success"></span>
+      </div>
+    </div>
+    <div>
+      <small class="text-muted">Lukasz Holeczek</small>
+      <small class="text-muted float-right mt-1">1:52 PM</small>
+    </div>
+    <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+  </div>
+</div> -->

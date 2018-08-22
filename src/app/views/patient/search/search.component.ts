@@ -21,5 +21,4 @@ export class SearchComponent implements OnInit {
     this.apiService.getPatientInfoByPapmiNo(papmiNo)
       .subscribe(ptVm => this.patientService.setPatientInfoVM(ptVm));
   }
-
 }
