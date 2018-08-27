@@ -1,3 +1,4 @@
+import { DocFilter } from './../models/doc-filter.model';
 import { DocumentFilter } from './../models/document-filter.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -82,6 +83,18 @@ export class ApiService {
         error => console.log(error)
       ),
       catchError(this.handleError('getCustomerAgrees', []))
+    );
+  }
+
+  public getDocumentFilter(papmiRowId: number): Observable<DocFilter> {
+    return this.http.get<any>(
+      this.baseUrl + `api/OpdRecord/GetDocumentFilter/${papmiRowId}`
+    )
+    .pipe(
+      tap(
+        data => console.log(data),
+        error => console.log(error)
+      )
     );
   }
 

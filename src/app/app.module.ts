@@ -70,6 +70,7 @@ import { DoctorsFilterComponent } from './views/epr/scan-documents/doctors-filte
 import { DocumentTypesFilterComponent } from './views/epr/scan-documents/document-types-filter/document-types-filter.component';
 import { DocumentAllFilterComponent } from './views/epr/scan-documents/document-all-filter/document-all-filter.component';
 import { ConsentformComponent } from './views/patient/consentform/consentform.component';
+import { DocumentComponent } from './views/patient/document/document.component';
 
 @NgModule({
   imports: [
@@ -114,7 +115,8 @@ import { ConsentformComponent } from './views/patient/consentform/consentform.co
     DoctorsFilterComponent,
     DocumentTypesFilterComponent,
     DocumentAllFilterComponent,
-    ConsentformComponent
+    ConsentformComponent,
+    DocumentComponent
   ],
   providers: [
     {

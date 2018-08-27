@@ -1,3 +1,4 @@
+import { DocFilter } from './../models/doc-filter.model';
 import { ApiService } from './api.service';
 import { CustomerAgree } from './../models/customer.model';
 import { DoctorService } from './doctor.service';
@@ -22,6 +23,7 @@ export class PatientService {
   baseUrl: string;
   patientInfoVM: PatientInfoVM;
   episodeTree: EpisodeTree[];
+  documentFilter: DocFilter;
   customerAgrees: CustomerAgree[];
   hn: string;
 
@@ -40,14 +42,22 @@ export class PatientService {
       this.episodeService.setEpisodeTree(patientInfoVM.EpisodeTree);
       this.apiService.getCustomerAgrees(patientInfoVM.PatientInfo.PAPMI_RowId1)
         .subscribe(c => this.setCustomerAgrees(c));
-      // console.log(this.patientInfoVM.EpisodeTree);
+      this.apiService.getDocumentFilter(patientInfoVM.PatientInfo.PAPMI_RowId1)
+        .subscribe(d => this.setDocumentFilter(d));
+      // console.log(this.patientInfoVM);
     }
   }
 
   public setCustomerAgrees(customerAgrees: CustomerAgree[]) {
     this.customerAgrees = [];
     this.customerAgrees = customerAgrees;
-    console.log(customerAgrees);
+    // console.log(customerAgrees);
+  }
+
+  public setDocumentFilter(documentFilter: DocFilter) {
+    this.documentFilter = null;
+    this.documentFilter = documentFilter;
+    console.log(this.documentFilter);
   }
 
   public clear() {
