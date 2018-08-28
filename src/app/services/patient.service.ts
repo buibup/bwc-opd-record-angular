@@ -62,6 +62,8 @@ export class PatientService {
 
   public clear() {
     this.patientInfoVM = null;
+    this.customerAgrees = [];
+    this.documentFilter = null;
     this.episodeService.clear();
     this.doctorService.clear();
   }

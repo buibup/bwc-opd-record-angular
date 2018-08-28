@@ -92,7 +92,7 @@ export class ApiService {
     )
     .pipe(
       tap(
-        data => console.log(data),
+        data => console.log('getDocumentFilter'),
         error => console.log(error)
       )
     );
