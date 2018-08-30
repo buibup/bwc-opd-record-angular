@@ -60,6 +60,10 @@ export class PatientService {
     console.log(this.documentFilter);
   }
 
+  public searchDoctorFilter(search) {
+    this.documentFilter.DoctorFilters.some(d => d.DoctorName.toLowerCase().includes(search));
+  }
+
   public clear() {
     this.patientInfoVM = null;
     this.customerAgrees = [];

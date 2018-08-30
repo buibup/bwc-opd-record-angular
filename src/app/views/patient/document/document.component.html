@@ -1,23 +1,40 @@
-<ng-container *ngIf="this.patietnService.documentFilter">
-  <div *ngFor="let item of this.patietnService.documentFilter.TypeFilters">
+<ng-container *ngIf="this.patientService.documentFilter">
+  <div style="text-align:left;">
+    <form>
+      <mat-form-field class="container">
+
+        <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
+        <input type="text" placeholder="Search doctors ..." matInput [formControl]="searchTerm" [matAutocomplete]="auto">
+
+        <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let doctors of patientService.documentFilter.DoctorFilters" [value]="doctors.DoctorName">
+            {{ doctors.DoctorName }}
+          </mat-option>
+        </mat-autocomplete>
+
+      </mat-form-field>
+    </form>
+  </div>
+  <div *ngFor="let item of this.patientService.documentFilter.TypeFilters">
     <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">{{item.TypeName}}</div>
     <div class="list-group list-group-accent" *ngFor="let doc of item.Documents">
-        <a [routerLink]='["/"]' >
-          <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
-            <div class="avatar float-right">
-              <img class="img-avatar" src="" alt="">
-            </div>
-            <div>
-              <strong>{{doc.DateCreated | date: 'dd/MM/yyyy'}}</strong>
-            </div>
-            <small class="text-muted">
-              <i class="icon-location-pin"></i> {{doc.SADST_Desc}}
-            </small><br>
-            <small class="text-muted mr-3" *ngIf="doc.Notes">
-                <i class="icon-notebook"></i> {{doc.Notes}}
-              </small>
+      <a [routerLink]='["/"]'>
+        <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+          <div class="avatar float-right">
+            <img class="img-avatar" src="" alt="">
           </div>
-        </a>
+          <div>
+            <strong>{{doc.DateCreated | date: 'dd/MM/yyyy'}}</strong>
+          </div>
+          <small class="text-muted">
+            <i class="icon-location-pin"></i> {{doc.SADST_Desc}}
+          </small><br>
+          <small class="text-muted mr-3" *ngIf="doc.Notes">
+            <i class="icon-notebook"></i> {{doc.Notes}}
+          </small>
+        </div>
+      </a>
     </div>
   </div>
 </ng-container>

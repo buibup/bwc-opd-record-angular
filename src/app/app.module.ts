@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -97,6 +98,7 @@ import { DocumentComponent } from './views/patient/document/document.component';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatInputModule,
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,

@@ -1,5 +1,6 @@
 import { PatientService } from './../../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-document',
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentComponent implements OnInit {
 
-  constructor(public patietnService: PatientService) {
-   }
+  searchTerm: FormControl = new FormControl();
+
+  constructor(public patientService: PatientService) {
+  }
 
   ngOnInit() {
   }
-
 }
