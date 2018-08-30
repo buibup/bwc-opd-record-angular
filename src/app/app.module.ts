@@ -94,7 +94,7 @@ import { DocumentComponent } from './views/patient/document/document.component';
   ],
   declarations: [
     AppComponent,
-    ...APP_CONTAINERS,
+    APP_CONTAINERS,
     P404Component,
     P500Component,
     LoginComponent,
