@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -51,6 +52,7 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { MatTabsModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatAutocompleteModule, MatInputModule } from '@angular/material';
 
 // Import opd record component
 import { SearchComponent } from './views/patient/search/search.component';
@@ -91,6 +93,10 @@ import { DocumentComponent } from './views/patient/document/document.component';
     MatCheckboxModule,
     AccordionModule.forRoot(),
     MatTreeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule,
   ],
   declarations: [
     AppComponent,
